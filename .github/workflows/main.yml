@@ -25,12 +25,12 @@ jobs:
         # 安装任何其他依赖
 
     - name: Run main script
-      run: python main.py
+      run: python a/main.py
 
-    - name: Commit changes
+    - name: 提交更改
       run: |
-        git config --global user.name 'Your Name'
-        git config --global user.email 'your-email@example.com'
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
         git add .
         git commit -m 'Automated rule processing update' || echo "No changes to commit"
         git push
