@@ -20,10 +20,10 @@ jobs:
    
     - name: Download file to Surge
       run: |
-        mkdir -p q-repo/rule/
+        mkdir -p t-repo/rule/
 
         # 广告规则 
-        curl -L -o q-repo/rule/cnip.txt "https://raw.githubusercontent.com/SouthAlley/q/main/rule/chinaip/fin.txt"
+        curl -L -o t-repo/rule/cnip.txt "https://raw.githubusercontent.com/SouthAlley/q/main/rule/chinaip/fin.txt"
 
 
     - name: Edit rule/ad
