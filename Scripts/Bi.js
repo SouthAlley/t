@@ -1,4 +1,5 @@
 /***********************************
+https://raw.githubusercontent.com/ddgksf2013/Scripts/master/bilibili_cc.js
 > 應用名稱：哔哩哔哩
 > 軟件版本：6.66.0
 > 下載地址：https://apps.apple.com/cn/app/id736536022
