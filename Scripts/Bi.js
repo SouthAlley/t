@@ -46,15 +46,3 @@ function Traditionalized(cc) {
   }
   return str;
 }
-//转成简体
-function Simplized(cc) {
-  var str = "",
-    ss = JTPYStr(),
-    tt = FTPYStr();
-  for (var i = 0; i < cc.length; i++) {
-    if (cc.charCodeAt(i) > 10000 && tt.indexOf(cc.charAt(i)) !== -1)
-      str += ss.charAt(tt.indexOf(cc.charAt(i)));
-    else str += cc.charAt(i);
-  }
-  return str;
-}
