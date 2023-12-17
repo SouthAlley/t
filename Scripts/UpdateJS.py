@@ -8,7 +8,7 @@ from datetime import datetime, timedelta, timezone
 script_directory = os.path.dirname(os.path.abspath(__file__))
 
 # 将当前工作目录更改为脚本所在的目录
-os.chdir(script_directory)
+os.chdir(scripts_directory)
 
 def download_file_from_comment(file_path):
     with open(file_path, 'rb') as file:
