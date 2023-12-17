@@ -4,6 +4,15 @@
 const url = $request.url;
 if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
+
+if (url.includes("nbfriend.message.conversation.list")) {
+  if (obj.data.data) {
+    obj.data.data = obj.data.data.filter((i) =>
+      i?.conversationId?.includes("logistic_message")
+    );
+  }
+} else if (url.includes("nbpresentation.pickup.empty.page.get")) {
+  // 取件页面
   if (obj.data.result) {
     let ggContent = obj.data.result.content;
     if (ggContent.middle) {
