@@ -13,18 +13,17 @@ jobs:
         run: |
           pwd
 
-      - name: Update
+      - name: 更新
         run: python sc/UpdateJS.py
 
-      - name: Commit
+      - name: Commit and push changes
         run: |
-          git pull origin main
-          git config --local user.email "123@gmail.com"
-          git config --local user.name "Gene"
-          git add ./*
-          git commit -m "UpdateJS" -a
-      - name: Push file
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+         if [[ -n $(git status -s) ]]; then
+           git config --local user.email "action@github.com"
+           git config --local user.name "GitHub Action"
+           git add ./*
+           git commit -m "UpdateJS" -a
+           git pull origin main
+         else
+          echo "No changes to commit."
+         fi
