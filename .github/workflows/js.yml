@@ -14,7 +14,7 @@ jobs:
           pwd
 
       - name: 更新
-        run: python sc/UpdateJS.py
+        run: python Scripts/UpdateJS.py
 
       - name: Commit and push changes
         run: |
