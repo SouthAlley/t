@@ -13,17 +13,17 @@ jobs:
         run: |
           pwd
 
-      - name: 更新
-        run: python Script/UpdateJSFile.py
+      - name: Update
+        run: python sc/UpdateJSFile.py
 
-      - name: "提交文件"
+      - name: Commit
         run: |
           git pull origin main
           git config --local user.email "123@gmail.com"
           git config --local user.name "Gene"
           git add ./*
-          git commit -m "Update JS" -a
-      - name: "推送文件"
+          git commit -m "UpdateJS" -a
+      - name: Push file
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
