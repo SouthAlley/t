@@ -29,15 +29,11 @@ def download_file_from_comment(file_path):
                 _, file_extension = os.path.splitext(os.path.basename(file_path))
                 filename = os.path.join("Scripts", f"{os.path.basename(file_path)}")
 
-                # 获取当前北京时间
-                beijing_time = datetime.now(timezone(timedelta(hours=8)))
-                beijing_time_str = beijing_time.strftime("%Y-%m-%d %H:%M:%S")
 
                 # 保存文件
                 with open(filename, 'wb') as new_file:
                     # 在文件开头插入注释信息
                     new_file.write(f"// 引用地址：{download_url}\n".encode('utf-8'))
-                    new_file.write(f"// 更新时间：{beijing_time_str}\n".encode('utf-8'))
                     new_file.write(response.content)
 
                 print(f"文件 {filename} 下载成功！")
