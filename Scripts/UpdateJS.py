@@ -36,8 +36,8 @@ def download_file_from_comment(file_path):
                 # 保存文件
                 with open(filename, 'wb') as new_file:
                     # 在文件开头插入注释信息
-                    new_file.write(f"// 引用地址：{download_url}\n"。encode('utf-8'))
-                    new_file.write(f"// 更新时间：{beijing_time_str}\n"。encode('utf-8'))
+                    new_file.write(f"// 引用地址：{download_url}\n".encode('utf-8'))
+                    new_file.write(f"// 更新时间：{beijing_time_str}\n".encode('utf-8'))
                     new_file.write(response.content)
 
                 print(f"文件 {filename} 下载成功！")
@@ -47,7 +47,7 @@ def download_file_from_comment(file_path):
             print(f"发生错误：{e}")
 
 # 文件夹路径
-folder_path = "Scripts"
+folder_path = "Script"
 
 # 遍历文件夹内的文件
 for filename in os.listdir(folder_path):
