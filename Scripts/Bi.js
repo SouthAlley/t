@@ -43,13 +43,3 @@ function Traditionalized(cc){
 			str+=cc.charAt(i); } 
 		return str; 
 }
-//转成简体
-function Simplized(cc){
-	var str=''; 
-	for(var i=0;i<cc.length;i++){ 
-		if(charft().indexOf(cc.charAt(i))!=-1) 
-		str+=charjt().charAt(charft().indexOf(cc.charAt(i))); 
-	else 
-		str+=cc.charAt(i); } 
-	return str; 
-}
