@@ -1,4 +1,4 @@
-// 引用地址：https://raw.githubusercontent.com/ddgksf2013/Scripts/master/bilibili_cc.js
+// 引用地址：https://raw.githubusercontent.com/ddgksf2013/Scripts/master/bili_cc.js
 /***********************************
 > 应用名称：哔哩哔哩
 > 软件版本：7.1.0
