@@ -16,7 +16,7 @@ var cuttlefish ={"warning":"本腳本僅供學習交流使用，禁止轉載售�
 
 var ddgksf2013 = JSON.parse($response.body);
 
-for (var i=0; i<ddgksf2013.body.length;i++) ddgksf2013.body[i].content = Simplized(ddgksf2013.body[i].content);
+for
 
 $done({body:JSON.stringify(ddgksf2013)});
 
