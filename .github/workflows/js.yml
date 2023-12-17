@@ -1,0 +1,30 @@
+name: js
+on:
+  workflow_dispatch:
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkout
+        run: |
+          pwd
+
+      - name: 更新
+        run: python Script/UpdateJSFile.py
+
+      - name: "提交文件"
+        run: |
+          git pull origin main
+          git config --local user.email "123@gmail.com"
+          git config --local user.name "Gene"
+          git add ./*
+          git commit -m "Update JS" -a
+      - name: "推送文件"
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
