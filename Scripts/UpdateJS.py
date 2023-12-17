@@ -18,14 +18,10 @@ def download_file_from_comment(file_path):
                 response = requests.get(download_url)
                 response.raise_for_status()
 
-                beijing_time = datetime.now(timezone(timedelta(hours=8)))
-                beijing_time_str = beijing_time.strftime("%Y-%m-%d %H:%M:%S")
-
                 filename = os.path.join("Scripts", f"{os.path.splitext(os.path.basename(file_path))[0]}.js")
 
                 with open(filename, 'wb') as new_file:
                     new_file.write(f"// 引用地址：{download_url}\n".encode('utf-8'))
-                    new_file.write(f"// 更新时间：{beijing_time_str}\n".encode('utf-8'))
                     new_file.write(response.content)
 
                 print(f"文件 {filename} 下载成功！")
