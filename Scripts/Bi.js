@@ -1,4 +1,4 @@
-// https://raw.githubusercontent.com/ddgksf2013/Scripts/master/bilibili_cc.js
+// 引用地址：https://raw.githubusercontent.com/ddgksf2013/Scripts/master/bilibili_cc.js
 /***********************************
 > 應用名稱：哔哩哔哩
 > 軟件版本：6.66.0
