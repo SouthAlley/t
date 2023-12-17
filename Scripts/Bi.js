@@ -1,5 +1,5 @@
 // 引用地址：https://raw.githubusercontent.com/ddgksf2013/Scripts/master/bilibili_cc.js
-// 更新时间：2023-12-17 10:04:24
+// 更新时间：2023-12-17 10:08:08
 /***********************************
 > 应用名称：哔哩哔哩
 > 软件版本：7.1.0
@@ -42,4 +42,14 @@ function Traditionalized(cc){
 		else 
 			str+=cc.charAt(i); } 
 		return str; 
+}
+//转成简体
+function Simplized(cc){
+	var str=''; 
+	for(var i=0;i<cc.length;i++){ 
+		if(charft().indexOf(cc.charAt(i))!=-1) 
+		str+=charjt().charAt(charft().indexOf(cc.charAt(i))); 
+	else 
+		str+=cc.charAt(i); } 
+	return str; 
 }

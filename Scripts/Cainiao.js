@@ -1,5 +1,5 @@
 // 引用地址：https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cainiao.js
-// 更新时间：2023-12-17 10:04:24
+// 更新时间：2023-12-17 10:08:08
 // 2023-11-12 14:45
 
 const url = $request.url;
@@ -112,6 +112,15 @@ if (url.includes("nbfriend.message.conversation.list")) {
       "793", // 支付宝 小程序 搜索框
       "954", // 支付宝 小程序 置顶图标
       "1308", // 支付宝 小程序 横图
+      "1316", // 头部 banner
+      "1332", // 我的页面 横图
+      "1340", // 查快递 小妙招
+      "1391", // 支付宝 小程序 寄包裹
+      "1410", // 导入拼多多、抖音快递
+      "1428", // 幸运号
+      "1524", // 抽现金
+      "1525", // 幸运包裹
+      "1638", // 为你精选了一些商品
     ];
     for (let i of item) {
       if (obj.data?.[i]) {
