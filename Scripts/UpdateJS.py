@@ -33,9 +33,11 @@ def download_file_from_comment(file_path):
 # 文件夹路径
 folder_path = "Scripts"
 
-# 遍历文件夹内的文件
-for filename in os.listdir(folder_path):
-    file_path = os.path.join(folder_path, filename)
 
-    if os.path.isfile(file_path) and re.search(r'\.js$', filename):
-        download_file_from_comment(file_path)
+# 遍历文件夹及其子文件夹内的所有文件
+for root, dirs, files in os.walk(folder_path):
+    for filename in files:
+        file_path = os.path.join(root, filename)
+
+        if re.search(r'\.js$', filename):
+            download_file_from_comment(file_path)
