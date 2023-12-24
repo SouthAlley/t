@@ -1,14 +1,7 @@
 // 引用地址：https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cainiao.js
 // 2023-11-12 14:45
 
-const url = $request.url;
-if (!$response.body) $done({});
-let obj = JSON.parse($response.body);
 
-if (url.includes("nbfriend.message.conversation.list")) {
-  if (obj.data.data) {
-    obj.data.data = obj.data.data.filter((i) =>
-      i?.conversationId?.includes("logistic_message")
     );
   }
 } else if (url.includes("nbpresentation.pickup.empty.page.get")) {
