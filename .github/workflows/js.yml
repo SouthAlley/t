@@ -28,8 +28,4 @@ jobs:
           echo "No changes to commit."
          fi
 
-      - name: "推送文件"
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+      
