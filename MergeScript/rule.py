@@ -6,13 +6,13 @@ from concurrent.futures import ThreadPoolExecutor
 
 # 正则表达式替换规则
 replacements = [
-    (r',', ','),
+    (r', ', ','),
     (r'([^,]*,[^,]*),.*', r'\1'),
-    (r'-suffix', '-SUFFIX'),
-    (r'-keyword', '-KEYWORD'),
-    (r'ip-cidr', 'IP-CIDR'),
-    (r'^(?:host|HOST)', 'DOMAIN'),
-    (r'IP6-CIDR', 'IP-CIDR6'),
+    (r'host-keyword,|HOST-KEYWORD,', 'DOMAIN-KEYWORD,'
+    (r'host-suffix,|HOST-SUFFIX,', 'DOMAIN-SUFFIX,'
+    (r'ip-cidr,', 'IP-CIDR,'),
+    (r'^(host,|HOST,)', 'DOMAIN,'),
+    (r'IP6-CIDR,|ip6-cidr,', 'IP-CIDR6,'
     (r'//.*', ''),
 ]
 
