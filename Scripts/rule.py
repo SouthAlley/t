@@ -1,4 +1,5 @@
 import re
+import os  # Add this line
 import requests
 from git import Repo
 
@@ -15,7 +16,6 @@ replacements = [
     (r'//.*', ''),
 ]
 
-
 # 获取远程规则内容
 remote_url = "https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/filter/fenliuxiuzheng.list"
 remote_content = requests.get(remote_url).text
@@ -31,6 +31,6 @@ repo = Repo(os.path.join("/github/workspace", local_path))
 with open(os.path.join(local_path, "fenliuxiuzheng_modified.list"), "w") as file:
     file.write(remote_content)
 
-repo.index.add([f"{local_path}/fenliuxiuzheng_modified.list"])
+repo.index.add([os.path.join(local_path, "fenliuxiuzheng_modified.list")])
 repo.index.commit("Apply regex replacements to fenliuxiuzheng.list")
 repo.remote().push()
