@@ -1,8 +1,8 @@
-#>PayPal
+# > PayPal
 DOMAIN,cdn.honey.io
 DOMAIN,fraud-api.dyneti.com
 DOMAIN,survey.qualtrics.com
-#Braintree
+# Braintree
 DOMAIN-SUFFIX,braintreegateway.com
 DOMAIN-SUFFIX,braintreegateway.tv
 DOMAIN-SUFFIX,braintreepayments.com
@@ -15,27 +15,27 @@ DOMAIN-SUFFIX,briantreepayments.net
 DOMAIN-SUFFIX,briantreepayments.tv
 DOMAIN-SUFFIX,card.io
 DOMAIN-SUFFIX,getbraintree.com
-#krakenjs
+# krakenjs
 DOMAIN-SUFFIX,krakenjs.com
-#LoanBuilder
+# LoanBuilder
 DOMAIN-SUFFIX,loanbuilder.com
 DOMAIN-SUFFIX,swiftcapital.com
-#Simility
+# Simility
 DOMAIN-SUFFIX,simility.com
-#SwiftFinancial
+# Swift Financial
 DOMAIN-SUFFIX,cashify.net
 DOMAIN-SUFFIX,swiftbank.info
 DOMAIN-SUFFIX,swiftbank.us
 DOMAIN-SUFFIX,swiftfinancial.com
 DOMAIN-SUFFIX,swiftfinancial.info
 DOMAIN-SUFFIX,swiftfinancial.net
-#Venmo
+# Venmo
 DOMAIN-SUFFIX,venmo-touch.com
 DOMAIN-SUFFIX,venmo.com
 DOMAIN-SUFFIX,venmo.info
 DOMAIN-SUFFIX,venmo.net
 DOMAIN-SUFFIX,venmo.org
-#Xoom
+# Xoom
 DOMAIN-SUFFIX,cash2.com
 DOMAIN-SUFFIX,filipino-music.net
 DOMAIN-SUFFIX,s-xoom.com
@@ -48,7 +48,7 @@ DOMAIN-SUFFIX,xoom.io
 DOMAIN-SUFFIX,xoom.net.cn
 DOMAIN-SUFFIX,xoom.us
 DOMAIN-SUFFIX,xoomcom.com
-#PayPal-Crop
+# PayPal-Crop
 DOMAIN-SUFFIX,anfutong.cn
 DOMAIN-SUFFIX,anfutong.com
 DOMAIN-SUFFIX,anfutong.com.cn

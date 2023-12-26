@@ -1,20 +1,20 @@
-#---------(AppleProxy)---------
-DOMAIN-SUFFIX,appsto.re
-DOMAIN-SUFFIX,smoot.apple.com
-DOMAIN,amp-api.podcasts.apple.com
-DOMAIN,beta.music.apple.com
-DOMAIN,books.itunes.apple.com
-DOMAIN,facetime.apple.com
-DOMAIN,lookup-api.apple.com
-DOMAIN,radio.itunes.apple.com
+# ---------(AppleProxy)---------
+DOMAIN-SUFFIX,appsto.re 
+DOMAIN-SUFFIX,smoot.apple.com 
+DOMAIN,amp-api.podcasts.apple.com 
+DOMAIN,beta.music.apple.com 
+DOMAIN,books.itunes.apple.com 
+DOMAIN,facetime.apple.com 
+DOMAIN,lookup-api.apple.com 
+DOMAIN,radio.itunes.apple.com 
 
-#>WebPreview
+# > Web Preview
 DOMAIN,apps.apple.com
 DOMAIN,books.apple.com
 DOMAIN,itunes.apple.com
 DOMAIN,tv.apple.com
 
-#>News
+# > News
 #DOMAIN,gateway.icloud.com
 DOMAIN-SUFFIX,apple.news
 DOMAIN,news-assets.apple.com
@@ -24,13 +24,13 @@ DOMAIN,news-edge.apple.com
 DOMAIN,news-events.apple.com
 DOMAIN,apple.comscoreresearch.com
 
-#iCloud
+# iCloud
 DOMAIN-SUFFIX,icloud-content.com
 
-#TestFlight
+# TestFlight
 DOMAIN,beta.apple.com
 DOMAIN,testflight.apple.com
 DOMAIN-KEYWORD,testflight
 
-#Other
+# Other
 DOMAIN-SUFFIX,apple-dns.net

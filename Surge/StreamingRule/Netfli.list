@@ -5,9 +5,9 @@ DOMAIN-SUFFIX,tg.dev
 DOMAIN-SUFFIX,legra.ph
 DOMAIN-SUFFIX,graph.org
 DOMAIN-SUFFIX,tdesktop.com
-DOMAIN-SUFFIX,telegra.ph
-DOMAIN-SUFFIX,telesco.pe
-DOMAIN-SUFFIX,comments.app
+DOMAIN-SUFFIX,telegra.ph 
+DOMAIN-SUFFIX,telesco.pe 
+DOMAIN-SUFFIX,comments.app 
 DOMAIN-KEYWORD,swiftgram
 DOMAIN-KEYWORD,telegram
 IP-CIDR,109.239.140.0/24
