@@ -1,32 +1,37 @@
-name: rules
+name: Update Rules
 
 on:
   workflow_dispatch:
-    
-
 
 jobs:
-  build:
+  update_rules:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-      - name: "启动任务"
-        run: |
-          pwd
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
-      - name: "下载并合并 Surge 规则"
-        run: python Scripts/rule.py
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.8
 
-      - name: "提交文件"
-        run: |
+    - name: Install dependencies
+      run: |
+        pip install gitpython requests
+
+    - name: Run Python script
+      run: python scripts/update_rules.py
+    - name: "提交文件"
+      run: |
           git pull origin main
           git config --local user.email "123@gmail.com"
           git config --local user.name "Gene"
           git add ./*
           git commit -m "Update Rules" -a
-      - name: "推送文件"
-        uses: ad-m/github-push-action@master
-        with:
+    - name: "推送文件"
+      uses: ad-m/github-push-action@master
+      with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
+
