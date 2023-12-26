@@ -52,13 +52,12 @@ HEADER = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36
 TYPES = "Surge"
 file_paths = [TYPES + "/" + rule for rule in RULES.keys()]
 
-def apply_replacements_to_temp_file(file_path):
-    temp_file_path = tempfile.mktemp(suffix=".tmp")
-    with open(file_path, 'r', encoding='utf8') as f:
-        lines = [re.sub(pattern, replacement, line.strip()) for line in f.readlines()]
-    with open(temp_file_path, 'w', encoding='utf8') as f:
-        f.writelines(line + '\n' for line in lines)
-    return temp_file_path
+def download_and_save_file(url, target_path):
+    response = requests.get(url, headers=HEADER)
+    if response.status_code == 200:
+        with open(target_path, "wb") as f:
+            f.write(response.content)
+        time.sleep(1)
 
 def apply_temp_file_to_original(temp_file_path, original_file_path):
     shutil.move(temp_file_path, original_file_path)
