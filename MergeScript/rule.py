@@ -52,6 +52,18 @@ HEADER = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36
 TYPES = "Surge"
 file_paths = [TYPES + "/" + rule for rule in RULES.keys()]
 
+def download_and_save_file(url, target_path):
+    response = requests.get(url, headers=HEADER)
+    if response.status_code == 200:
+        with open(target_path, "wb") as f:
+            f.write(response.content)
+        time.sleep(1)
+
+def apply_replacements(line):
+    for pattern, replacement in replacements:
+        line = re.sub(pattern, replacement, line)
+    return line
+
 def load_files(rules, folder):
     target_directory = os.path.join(TYPES, folder)
     os.makedirs(target_directory, exist_ok=True)
@@ -64,17 +76,18 @@ def load_files(rules, folder):
         
         for future in futures:
             future.result()
-        
-    # 读取并应用替换规则
-    for path in [os.path.join(target_directory, f"{rule_name}.list") for rule_name in rules.keys()]:
-        with open(path, 'r', encoding='utf8') as file:
-            lines = [line.strip() for line in file.readlines()]
+        print(f"新文件已下载至：{target_directory}")
 
-        # 应用替换规则
-        modified_lines = [apply_replacements(line) for line in lines]
+if __name__ == '__main__':
+    for folder, rules in RULES.items():
+        load_files(rules, folder)
+    for path in file_paths:
+        # 创建文件夹，如果文件夹不存在
+        if not os.path.exists(path):
+            os.makedirs(path)
+            print(f"创建目录 {path} 成功")
+            
+        # 在这里添加自定义逻辑，比如其他文件操作或处理
+        # ...
 
-        # 保存修改后的内容
-        with open(path, 'w', encoding='utf8') as file:
-            file.write('\n'.join(modified_lines))
-
-    print(f"新文件已下载并替换至：{target_directory}")
+        print(f"处理 {path} 完成")
