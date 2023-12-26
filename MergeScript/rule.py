@@ -6,9 +6,8 @@ from concurrent.futures import ThreadPoolExecutor
 
 # 正则表达式替换规则
 replacements = [
-    (r'\s+', ''),
-    (r',no-resolve', ''),
-    (r',(?:DIRECT$|direct$|REJECT$|reject$|PROXY$|proxy$)', ''),
+    (r',', ','),
+    (r'([^,]*,[^,]*),.*', r'\1'),
     (r'-suffix', '-SUFFIX'),
     (r'-keyword', '-KEYWORD'),
     (r'ip-cidr', 'IP-CIDR'),
