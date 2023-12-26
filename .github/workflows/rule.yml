@@ -22,10 +22,9 @@ jobs:
       run: |
         pip install gitpython requests
 
-    - name: Run Python script
-      run: |
-        cd Scripts  # 进入脚本目录
-        python rule.py
+    - name: "下载并合并 Surge 规则"
+      run: python Scripts/sule.py
+
     - name: "提交文件"
       run: |
        git checkout main  # 切换到主分支
