@@ -26,7 +26,7 @@ for pattern, replacement in replacements:
 
 # 推送到本地仓库
 local_path = "SouthAlley/t"
-repo = Repo(local_path)
+repo = Repo("SouthAlley/t")
 
 with open(f"{local_path}/fenliuxiuzheng_modified.list", "w") as file:
     file.write(remote_content)
