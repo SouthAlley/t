@@ -25,7 +25,7 @@ for pattern, replacement in replacements:
     remote_content = re.sub(pattern, replacement, remote_content)
 
 # 推送到本地仓库
-local_path = "SouthAlley/t"
+local_path = "t"
 repo = Repo(os.path.join("/github/workspace", local_path))
 
 with open(os.path.join(local_path, "fenliuxiuzheng_modified.list"), "w") as file:
