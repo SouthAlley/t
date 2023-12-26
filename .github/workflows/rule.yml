@@ -21,7 +21,7 @@ jobs:
         pip install gitpython requests
 
     - name: Run Python script
-      run: python scripts/update_rules.py
+      run: python Scripts/rule.py
     - name: "提交文件"
       run: |
           git pull origin main
