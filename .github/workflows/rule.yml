@@ -23,17 +23,20 @@ jobs:
         pip install gitpython requests
 
     - name: Run Python script
-      run: python Scripts/rule.py
+      run: |
+        cd Scripts  # 进入脚本目录
+        python rule.py
     - name: "提交文件"
       run: |
-          git pull origin main
-          git config --local user.email "123@gmail.com"
-          git config --local user.name "Gene"
-          git add ./*
-          git commit -m "Update Rules" -a
+       git checkout main  # 切换到主分支
+       git pull origin main
+       git config --local user.email "123@gmail.com"
+       git config --local user.name "Gene"
+       git add ./*
+       git commit -m "Update Rules" -a
     - name: "推送文件"
       uses: ad-m/github-push-action@master
       with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
 
