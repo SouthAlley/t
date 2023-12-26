@@ -13,6 +13,7 @@ replacements = [
     (r'ip-cidr,', 'IP-CIDR,'),
     (r'(host,|HOST,)', 'DOMAIN,'),
     (r'(IP6-CIDR,|ip6-cidr,)', 'IP-CIDR6,'),
+    (r'(IP-CIDR[6]{0,1},[^,]*)', r'\1,no-resolve'),
     (r'//.*', ''),
 ]
 
