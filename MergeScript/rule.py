@@ -8,8 +8,9 @@ from concurrent.futures import ThreadPoolExecutor
 replacements = [
     (r', ', ','),
     (r'([^,]*,[^,]*),.*', r'\1'),
-    (r'(?i)host,', 'DOMAIN,'),
     (r'ip-cidr,', 'IP-CIDR,'),
+    (r'(?i)host,', 'DOMAIN,'),
+    (r'(?i)host-wildcard,[^,]*', '')
     (r'(?i)ip6-cidr,', 'IP-CIDR6,'),
     (r'(?i)host-keyword,', 'DOMAIN-KEYWORD,'),
     (r'(?i)host-suffix,', 'DOMAIN-SUFFIX,'), 
