@@ -84,9 +84,7 @@ def load_files(rules, folder):
          # 保存修改后的内容
          with open(path, 'w', encoding='utf8') as file:
              file.write('\n'.join(modified_lines))
-
-     print(f"新文件已下载并替换至：{target_directory}")
-
+             
  if __name__ == '__main__':
      for folder, rules in RULES.items():
         load_files(rules, folder)
