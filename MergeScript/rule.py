@@ -3,19 +3,23 @@ import re
 import time
 import requests
 from concurrent.futures import ThreadPoolExecutor
+import subprocess
 
-# 正则表达式替换规则
-replacements = [
-    (r'\s+', ''),
-    (r',no-resolve', ''),
-    (r',(?:DIRECT$|direct$|REJECT$|reject$|PROXY$|proxy$)', ''),
-    (r'-suffix', '-SUFFIX'),
-    (r'-keyword', '-KEYWORD'),
-    (r'ip-cidr', 'IP-CIDR'),
-    (r'^(?:host|HOST)', 'DOMAIN'),
-    (r'IP6-CIDR', 'IP-CIDR6'),
-    (r'//.*', ''),
-]
+
+def process_file(file_path):
+    # 使用 Sed 和 Awk 命令进行处理
+    subprocess.run(['sed', '-i', 's/, /,/g', file_path])
+    subprocess.run(['awk', '{sub("host-wildcard.*$", ""); print}', file_path], stdout=open('tmpfile', 'w'))
+    subprocess.run(['mv', 'tmpfile', file_path])
+    subprocess.run(['sed', '-i', '-e', 's/host,/DOMAIN,/gi', file_path])
+    subprocess.run(['sed', '-i', '-e', 's/host-suffix,/DOMAIN-SUFFIX,/gi', file_path])
+    subprocess.run(['sed', '-i', '-e', 's/host-keyword,/DOMAIN-KEYWORD,/gi', file_path])
+    subprocess.run(['sed', '-i', 's/ip-cidr,/IP-CIDR,/gi', file_path])
+    subprocess.run(['sed', '-i', 's/ip6-cidr,/IP-CIDR6,/gi', file_path])
+    subprocess.run(['sed', '-i', 's/user-agent,/USER-AGENT,/g', file_path])
+    subprocess.run(['sed', '-i', 's/\([^,]*,[^,]*\),.*/\\1/g', file_path])
+    subprocess.run(['sed', '-i', '/IP-CIDR/ {/no-resolve/! s/$/,no-resolve/}; /IP-CIDR6/ {/no-resolve/! s/$/,no-resolve/}', file_path])
+    subprocess.run(['sed', '-i', 's/;/# /g', file_path])
 
 RULES = {
     "CorrectionRule": {
@@ -98,8 +102,11 @@ if __name__ == '__main__':
         if not os.path.exists(path):
             os.makedirs(path)
             print(f"创建目录 {path} 成功")
-            
+
         # 在这里添加自定义逻辑，比如其他文件操作或处理
         # ...
+
+        # 处理文件
+        process_file(path)
 
         print(f"处理 {path} 完成")
