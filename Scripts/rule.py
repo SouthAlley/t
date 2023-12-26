@@ -25,7 +25,7 @@ for pattern, replacement in replacements:
     remote_content = re.sub(pattern, replacement, remote_content)
 
 # 推送到本地仓库
-local_path = "rule"
+local_path = "SouthAlley/t"
 repo = Repo(local_path)
 
 with open(f"{local_path}/fenliuxiuzheng_modified.list", "w") as file:
