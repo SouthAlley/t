@@ -1,4 +1,4 @@
-# Steam
+#Steam
 DOMAIN,api.steampowered.com
 DOMAIN,f3b7q2p3.ssl.hwcdn.net
 DOMAIN,steammobile.akamaized.net
@@ -30,7 +30,7 @@ DOMAIN-SUFFIX,steamunlocked.net
 DOMAIN-SUFFIX,underlords.com
 DOMAIN-SUFFIX,valvesoftware.com
 
-# SteamCN
+#SteamCN
 DOMAIN,dl.steam.clngaa.com
 DOMAIN,dl.steam.ksyna.com
 DOMAIN,st.dl.bscstorage.net
@@ -47,8 +47,8 @@ DOMAIN-SUFFIX,steamcontent.com
 DOMAIN-SUFFIX,steamusercontent.com
 DOMAIN-SUFFIX,steamserver.net
 
-# > SteamDownload
-# Akamai Download CDN
+#>SteamDownload
+#AkamaiDownloadCDN
 DOMAIN-SUFFIX,steambroadcast.akamaized.net
 DOMAIN-SUFFIX,steamcdn-a.akamaihd.net
 DOMAIN-SUFFIX,steamcommunity-a.akamaihd.net
@@ -57,24 +57,24 @@ DOMAIN-SUFFIX,steamstore-a.akamaihd.net
 DOMAIN-SUFFIX,steamusercontent-a.akamaihd.net
 DOMAIN-SUFFIX,steamuserimages-a.akamaihd.net
 DOMAIN-SUFFIX,steamvideo-a.akamaihd.net
-# 阿里云 Download CDN
+#阿里云DownloadCDN
 DOMAIN-SUFFIX,cdn-ali.content.steamchina.com
-# 白山云 Download CDN
+#白山云DownloadCDN
 DOMAIN-SUFFIX,st.dl.bscstorage.net
 DOMAIN-SUFFIX,st.dl.eccdnx.com
 DOMAIN-SUFFIX,st.dl.pinyuncloud.com
-# 华为云 Download CDN
+#华为云DownloadCDN
 DOMAIN-SUFFIX,steampipe.steamcontent.tnkjmec.com
-# 金山云 Download CDN
+#金山云DownloadCDN
 DOMAIN-SUFFIX,dl.steam.clngaa.com
 DOMAIN-SUFFIX,dl.steam.ksyna.com
-# 腾讯云 Download CDN
+#腾讯云DownloadCDN
 DOMAIN-SUFFIX,cdn-qc.content.steamchina.com
-# 完美 Download CDN
+#完美DownloadCDN
 DOMAIN-SUFFIX,csgo.wmsj.cn
 DOMAIN-SUFFIX,dota2.wmsj.cn
 DOMAIN-SUFFIX,wmsjsteam.com
-# 网宿 Download CDN
+#网宿DownloadCDN
 DOMAIN-SUFFIX,cdn-ws.content.steamchina.com
 DOMAIN-SUFFIX,steampowered.com.8686c.com
 DOMAIN-SUFFIX,steamstatic.com.8686c.com
@@ -83,7 +83,7 @@ DOMAIN-KEYWORD,steamuserimages
 DOMAIN-KEYWORD,steambroadcast
 
 
-# > Blizzard
+#>Blizzard
 DOMAIN-SUFFIX,battle.net
 DOMAIN-SUFFIX,battlenet.com
 DOMAIN-SUFFIX,blizzard.cn
@@ -99,7 +99,7 @@ DOMAIN-SUFFIX,blzmedia-a.akamaihd.net
 DOMAIN-SUFFIX,blznav.akamaized.net
 DOMAIN-SUFFIX,blzstatic.cn
 DOMAIN-SUFFIX,cdp.cloud.unity3d.com
-# Battle.Net
+#Battle.Net
 DOMAIN-SUFFIX,battlenet.com.cn
 DOMAIN-SUFFIX,blizzard.nefficient.co.kr
 DOMAIN-SUFFIX,blzddistkr1-a.akamaihd.net
@@ -108,59 +108,59 @@ DOMAIN-SUFFIX,bnetcmsus-a.akamaihd.net
 DOMAIN-SUFFIX,bnetproduct-a.akamaihd.net
 DOMAIN-SUFFIX,bnetshopus.akamaized.net
 DOMAIN-KEYWORD,blz-contentstack
-# Diablo
+#Diablo
 DOMAIN-SUFFIX,di.res.netease.com
 DOMAIN-SUFFIX,diablo3.com
 DOMAIN-SUFFIX,diablo3.nosdn.127.net
 DOMAIN-SUFFIX,diabloimmortal.com
-# Hearthstone
+#Hearthstone
 DOMAIN-SUFFIX,firesidegatherings.com
 DOMAIN-SUFFIX,hearthstone.nosdn.127.net
 DOMAIN-SUFFIX,playhearthstone.com
-# Hero of the Storm
+#HerooftheStorm
 DOMAIN-SUFFIX,heroes.nos.netease.com
 DOMAIN-SUFFIX,heroesofthestorm.com
-# Overwatch
+#Overwatch
 DOMAIN-SUFFIX,overwatch.nosdn.127.net
 DOMAIN-SUFFIX,playoverwatch.com
-# Starcraft
+#Starcraft
 DOMAIN-SUFFIX,sc2.nosdn.127.net
 DOMAIN-SUFFIX,starcraft.com
 DOMAIN-SUFFIX,starcraft2.com
-# Warcraft
+#Warcraft
 DOMAIN-SUFFIX,playwarcraft3.com
-# World of Warcraft
+#WorldofWarcraft
 DOMAIN-SUFFIX,worldofwarcraft.com
 DOMAIN-SUFFIX,wow.nosdn.127.net
 DOMAIN-SUFFIX,wowchina.com
-IP-CIDR,103.4.115.248/32,no-resolve
-IP-CIDR,182.162.135.1/32,no-resolve
-IP-CIDR,185.60.112.157/32,no-resolve
-IP-CIDR,185.60.112.158/32,no-resolve
-IP-CIDR,210.242.235.6/32,no-resolve
-IP-CIDR,24.105.30.129/32,no-resolve
-IP-CIDR,54.94.196.47/32,no-resolve
-IP-CIDR,182.162.132.1/32,no-resolve
-IP-CIDR,103.4.114.233/32,no-resolve
-IP-CIDR,182.162.116.1/32,no-resolve
-IP-CIDR,202.9.67.59/32,no-resolve
-IP-CIDR,203.69.111.4/32,no-resolve
-IP-CIDR,24.105.62.129/32,no-resolve
-IP-CIDR,54.207.104.145/32,no-resolve
-IP-CIDR,203.66.81.98/32,no-resolve
-IP-CIDR,211.234.110.1/32,no-resolve
-IP-CIDR,54.207.107.12/32,no-resolve
-IP-CIDR,185.60.114.159/32,no-resolve
-IP-CIDR,202.9.67.254/32,no-resolve
-IP-CIDR,222.231.22.1/32,no-resolve
-IP-CIDR,137.221.105.2/32,no-resolve
-IP-CIDR,137.221.105.168/32,no-resolve
-IP-CIDR,137.221.106.21/32,no-resolve
-IP-CIDR,210.71.148.11/32,no-resolve
-IP-CIDR,211.115.104.1/32,no-resolve
+IP-CIDR,103.4.115.248/32
+IP-CIDR,182.162.135.1/32
+IP-CIDR,185.60.112.157/32
+IP-CIDR,185.60.112.158/32
+IP-CIDR,210.242.235.6/32
+IP-CIDR,24.105.30.129/32
+IP-CIDR,54.94.196.47/32
+IP-CIDR,182.162.132.1/32
+IP-CIDR,103.4.114.233/32
+IP-CIDR,182.162.116.1/32
+IP-CIDR,202.9.67.59/32
+IP-CIDR,203.69.111.4/32
+IP-CIDR,24.105.62.129/32
+IP-CIDR,54.207.104.145/32
+IP-CIDR,203.66.81.98/32
+IP-CIDR,211.234.110.1/32
+IP-CIDR,54.207.107.12/32
+IP-CIDR,185.60.114.159/32
+IP-CIDR,202.9.67.254/32
+IP-CIDR,222.231.22.1/32
+IP-CIDR,137.221.105.2/32
+IP-CIDR,137.221.105.168/32
+IP-CIDR,137.221.106.21/32
+IP-CIDR,210.71.148.11/32
+IP-CIDR,211.115.104.1/32
 
 
-# Epic
+#Epic
 DOMAIN-SUFFIX,battlebreakers.com
 DOMAIN-SUFFIX,eac-cdn.com
 DOMAIN-SUFFIX,easy.ac
@@ -179,7 +179,7 @@ DOMAIN-SUFFIX,unrealengine.com
 DOMAIN-KEYWORD,epicgames
 
 
-# > Origin/EA
+#>Origin/EA
 DOMAIN,originasserts.akamaized.net
 DOMAIN-SUFFIX,origin.com
 DOMAIN-SUFFIX,cloudsync-prod.s3.amazonaws.com
@@ -193,12 +193,12 @@ DOMAIN-SUFFIX,easports.com
 DOMAIN-SUFFIX,eaplay.com
 DOMAIN-SUFFIX,origin.tv
 DOMAIN-SUFFIX,ea.com
-# Apex
+#Apex
 DOMAIN-SUFFIX,apexlegends.com
 DOMAIN-SUFFIX,projectapex.com
 
 
-# Xbox
+#Xbox
 DOMAIN-SUFFIX,xbx.lv
 DOMAIN-SUFFIX,xbox.co
 DOMAIN-SUFFIX,xbox.com
@@ -222,7 +222,7 @@ DOMAIN-SUFFIX,xboxservices.com
 DOMAIN-SUFFIX,xboxstudios.com
 DOMAIN-SUFFIX,xboxservice.com
 DOMAIN-SUFFIX,renovacionxboxlive.com
-# 微软游戏
+#微软游戏
 DOMAIN-SUFFIX,tellmewhygame.com
 DOMAIN-SUFFIX,forzamotorsport.net
 DOMAIN-SUFFIX,forzaracingchampionship.com
@@ -240,7 +240,7 @@ DOMAIN-SUFFIX,bethesdagamestudios.com
 DOMAIN-SUFFIX,bethsoft.com
 
 
-# UBI
+#UBI
 DOMAIN-SUFFIX,ubi.com
 DOMAIN-SUFFIX,ubisoft.com
 DOMAIN-SUFFIX,uplay.com
@@ -249,7 +249,7 @@ DOMAIN-SUFFIX,ubisoft-orbit-savegames.s3.amazonaws.com
 DOMAIN-SUFFIX,uplaypc-s-ubisoft.cdn.ubi.com
 
 
-# Sony
+#Sony
 DOMAIN-SUFFIX,sony.com
 DOMAIN-SUFFIX,playstation.com
 DOMAIN-SUFFIX,playstation.net
@@ -257,7 +257,7 @@ DOMAIN-SUFFIX,playstationnetwork.com
 DOMAIN-SUFFIX,sonyentertainmentnetwork.com
 
 
-# Rockstar
+#Rockstar
 DOMAIN-SUFFIX,gamedownloads-rockstargames-com.akamaized.net
 DOMAIN-SUFFIX,media-rockstargames-com.akamaized.net
 DOMAIN-SUFFIX,rockstargames.com
@@ -265,7 +265,7 @@ DOMAIN-SUFFIX,rsg.sc
 DOMAIN-SUFFIX,videos-rockstargames-com.akamaized.net
 
 
-# > Riot
+#>Riot
 DOMAIN-SUFFIX,historyofdota.com
 DOMAIN-SUFFIX,historyofdota.net
 DOMAIN-SUFFIX,historyofdota.org
@@ -287,18 +287,18 @@ DOMAIN-SUFFIX,riotpoints.com
 DOMAIN-SUFFIX,rstatic.net
 DOMAIN-SUFFIX,supremacy.com
 DOMAIN-SUFFIX,supremacy.net
-# Valorant
+#Valorant
 DOMAIN-SUFFIX,playvalorant.com
-# Riot Forge
+#RiotForge
 DOMAIN-SUFFIX,convrgencegame.com
 DOMAIN-SUFFIX,riotforgegames.com
 DOMAIN-SUFFIX,ruinedking.com
-# League of Lengends
+#LeagueofLengends
 DOMAIN-SUFFIX,leaguehighschool.com
 DOMAIN-KEYWORD,leaguehighschool
 
 
-# Garena
+#Garena
 DOMAIN-SUFFIX,garena.co.id
 DOMAIN-SUFFIX,garena.co.th
 DOMAIN-SUFFIX,garena.com
@@ -316,14 +316,14 @@ DOMAIN-SUFFIX,cdngarenanow-a.akamaihd.net
 DOMAIN-SUFFIX,dlmobilegarena-a.akamaihd.net
 
 
-# GOG
+#GOG
 DOMAIN,gog.salesmanago.com
 DOMAIN-SUFFIX,gog-statics.com
 DOMAIN-SUFFIX,gog.com
 DOMAIN-SUFFIX,gog.qtlglb.com
 
 
-# Nintendo任天堂
+#Nintendo任天堂
 DOMAIN-SUFFIX,nintendo-europe.com
 DOMAIN-SUFFIX,nintendo.be
 DOMAIN-SUFFIX,nintendo.co.jp
@@ -341,15 +341,14 @@ DOMAIN-SUFFIX,nintendo.nl
 DOMAIN-SUFFIX,nintendowifi.net
 
 
-# OPGG
+#OPGG
 DOMAIN-SUFFIX,op.gg
 DOMAIN-SUFFIX,opgg-static.akamaized.net
 
 
-# 2KGames
+#2KGames
 DOMAIN-SUFFIX,2k.com
 DOMAIN-SUFFIX,2kcoretech.online
 DOMAIN-SUFFIX,2kgames.com
 DOMAIN-SUFFIX,take2games.com
-
 
