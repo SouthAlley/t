@@ -1,4 +1,4 @@
-#2023-12-7
+# 2023-12-7
 
 DOMAIN,api.revenuecat.com
 DOMAIN,api.statsig.com
@@ -25,7 +25,8 @@ DOMAIN-SUFFIX,host.livekit.cloud
 DOMAIN-SUFFIX,turn.livekit.cloud
 DOMAIN-SUFFIX,chatgpt.livekit.cloud
 DOMAIN-KEYWORD,openai
-IP-ASN,14061
-IP-ASN,20473
-IP-ASN,31898
+IP-ASN,14061,no-resolve
+IP-ASN,20473,no-resolve
+IP-ASN,31898,no-resolve
+
 

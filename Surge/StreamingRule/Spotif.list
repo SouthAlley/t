@@ -1,50 +1,50 @@
-#>Google
+# > Google
 DOMAIN-KEYWORD,google
 
-#AlphabetWebsites
+# Alphabet Websites 
 DOMAIN-SUFFIX,abc.xyz
 DOMAIN-SUFFIX,capitalg.com
 
-#AMP
+# AMP
 DOMAIN-SUFFIX,amp.dev
 DOMAIN-SUFFIX,ampproject.com
 DOMAIN-SUFFIX,ampproject.net
 DOMAIN-SUFFIX,ampproject.org
 
-#Android
+# Android
 DOMAIN-SUFFIX,android.com
 DOMAIN-SUFFIX,androidify.com
 
-#Appspot
+# Appspot
 DOMAIN-KEYWORD,appspot
 
-#Chrome&Chromium
+# Chrome & Chromium
 DOMAIN-SUFFIX,chrome.com
 DOMAIN-SUFFIX,chromeexperiments.com
 DOMAIN-SUFFIX,chromestatus.com
 DOMAIN-SUFFIX,chromium.org
 DOMAIN-SUFFIX,whatbrowser.org
 
-#GoogleAI
+# Google AI
 DOMAIN-SUFFIX,autodraw.com
 DOMAIN-SUFFIX,deepmind.com
 DOMAIN-SUFFIX,tensorflow.org
 DOMAIN-SUFFIX,tfhub.dev
 
-#GoogleAPIs
+# Google APIs
 DOMAIN,translate.googleapis.com
 DOMAIN-SUFFIX,googleapis.com
 
-#GoogleBlogger
+# Google Blogger
 DOMAIN-KEYWORD,blogspot
 DOMAIN-SUFFIX,blogger.com
 DOMAIN-SUFFIX,googleblog.com
 
-#GoogleCloudPlatform
+# Google Cloud Platform
 DOMAIN-SUFFIX,dialogflow.com
 DOMAIN-SUFFIX,gcp.gvt2.com
 
-#GoogleDeveloper
+# Google Developer
 DOMAIN-KEYWORD,googlesource
 DOMAIN-SUFFIX,godoc.org
 DOMAIN-SUFFIX,golang.org
@@ -58,19 +58,19 @@ DOMAIN-SUFFIX,webmproject.org
 DOMAIN-SUFFIX,webrtc.org
 DOMAIN-SUFFIX,withgoogle.com
 
-#GoogleEducation
+# Google Education
 DOMAIN-SUFFIX,madewithcode.com
 
-#GoogleEnterprise
+# Google Enterprise
 DOMAIN-SUFFIX,synergyse.com
 
-#Gmail
+# Gmail
 DOMAIN-KEYWORD,gmail
 
-#GoogleRecaptcha
+# Google Recaptcha
 DOMAIN-KEYWORD,recaptcha
 
-#GoogleStaticFiles
+# Google Static Files
 DOMAIN-KEYWORD,gstatic
 DOMAIN-SUFFIX,gmodules.com
 DOMAIN-SUFFIX,googleusercontent.com
@@ -78,19 +78,19 @@ DOMAIN-SUFFIX,gvt0.com
 DOMAIN-SUFFIX,gvt1.com
 DOMAIN-SUFFIX,gvt3.com
 
-#GoogleVR
+# Google VR
 DOMAIN-SUFFIX,tiltbrush.com
 
-#MaterialDesign
+# Material Design
 DOMAIN-SUFFIX,getmdl.io
 DOMAIN-SUFFIX,material.io
 
-#GoogleDrive
+# Google Drive
 USER-AGENT,%E4%BA%91%E7%AB%AF%E7%A1%AC%E7%9B%98*
 USER-AGENT,*com.google.Drive*
 USER-AGENT,Google.Drive*
 
-#Other
+# Other
 DOMAIN-SUFFIX,blog.google
 DOMAIN-SUFFIX,certificate-transparency.org
 DOMAIN-SUFFIX,certificate-transparency.dev
@@ -108,11 +108,11 @@ DOMAIN-SUFFIX,ggpht.com
 DOMAIN-SUFFIX,g.co
 DOMAIN-SUFFIX,goo.gl
 
-#GoogleIP
-IP-CIDR,173.194.0.0/16
-IP-CIDR,74.125.0.0/16
+# Google IP
+IP-CIDR,173.194.0.0/16,no-resolve
+IP-CIDR,74.125.0.0/16,no-resolve
 
-#GoogleDomesticCDNs
+# Google Domestic CDNs
 DOMAIN,clientservices.googleapis.com
 DOMAIN,fonts.googleapis.com
 DOMAIN,fonts.gstatic.com

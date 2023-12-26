@@ -1,9 +1,9 @@
-#>Microsoft
+# > Microsoft
 DOMAIN-KEYWORD,windows
 DOMAIN-KEYWORD,microsoft
 USER-AGENT,Microsoft*
 
-#Azure
+# Azure
 DOMAIN-SUFFIX,azure.cn
 DOMAIN-SUFFIX,azure.com
 DOMAIN-SUFFIX,azure.net
@@ -34,13 +34,13 @@ DOMAIN-SUFFIX,gotcosmos.com
 DOMAIN-SUFFIX,serverlesslibrary.net
 DOMAIN-SUFFIX,tryfunctions.com
 
-#Bethesda
+# Bethesda
 DOMAIN-SUFFIX,beth.games
 DOMAIN-SUFFIX,bethesda.net
 DOMAIN-SUFFIX,bethesdagamestudios.com
 DOMAIN-SUFFIX,bethsoft.com
 
-#Bing
+# Bing
 DOMAIN-SUFFIX,bing.com
 DOMAIN-SUFFIX,bing.net
 DOMAIN-SUFFIX,biying.com
@@ -83,12 +83,12 @@ DOMAIN-SUFFIX,osdinfra.net
 DOMAIN-SUFFIX,sprinklesapp.com
 DOMAIN-SUFFIX,working-bing-int.com
 
-#Cortana
+# Cortana
 DOMAIN-SUFFIX,cortana.ai
 DOMAIN-SUFFIX,cortanaanalytics.com
 DOMAIN-SUFFIX,cortanaskills.com
 
-#Edge
+# Edge
 DOMAIN-SUFFIX,a-msedge.net
 DOMAIN-SUFFIX,c-msedge.net
 DOMAIN-SUFFIX,e-msedge.net
@@ -96,40 +96,40 @@ DOMAIN-SUFFIX,edgesuite.net
 DOMAIN-SUFFIX,msedge.net
 DOMAIN-SUFFIX,s-msedge.net
 
-#Here
+# Here
 DOMAIN-SUFFIX,here.com
 DOMAIN-SUFFIX,here.net
 DOMAIN-SUFFIX,heremaps.cn
 DOMAIN-SUFFIX,ovi.com.cn
 
-#M12
+# M12
 DOMAIN-SUFFIX,femalefounderscomp.com
 DOMAIN-SUFFIX,m12.vc
 
-#Hotmail&Outlook
+# Hotmail & Outlook
 DOMAIN-KEYWORD,outlook
 DOMAIN-KEYWORD,hotmail
 
-#Live
+# Live
 DOMAIN-SUFFIX,live.com
 DOMAIN-SUFFIX,live.net
 DOMAIN-SUFFIX,sclive.net
 DOMAIN-SUFFIX,wlxrs.com
 DOMAIN-SUFFIX,livefilestore.com
 
-#Mojang
+# Mojang
 DOMAIN-SUFFIX,callersbane.com
 DOMAIN-SUFFIX,minecraft.net
 DOMAIN-SUFFIX,minecraftshop.com
 DOMAIN-SUFFIX,mojang.com
 
-#MSN
+# MSN
 DOMAIN-SUFFIX,msn.cn
 DOMAIN-SUFFIX,msn.com
 DOMAIN-SUFFIX,msnkids.com
 DOMAIN-SUFFIX,winmp.cn
 
-#MicrosoftDeveloper
+# Microsoft Developer
 DOMAIN-SUFFIX,adaptivecards.io
 DOMAIN-SUFFIX,api-extractor.com
 DOMAIN-SUFFIX,apisof.net
@@ -166,7 +166,7 @@ DOMAIN-SUFFIX,xamarin.com
 DOMAIN-SUFFIX,spoprod-a.akamaihd.net
 DOMAIN-SUFFIX,svc.ms
 
-#Office365
+# Office 365
 DOMAIN-SUFFIX,o365cn.com
 DOMAIN-SUFFIX,o365files.cn
 DOMAIN-SUFFIX,o365weve-dev.com
@@ -176,7 +176,7 @@ DOMAIN-SUFFIX,office365.com
 DOMAIN-SUFFIX,microsoft365.com
 DOMAIN-KEYWORD,office
 
-#OneDrive&Sharepoint
+# OneDrive & Sharepoint
 DOMAIN-SUFFIX,onedrive.com
 DOMAIN-SUFFIX,sharepoint.com
 DOMAIN-SUFFIX,sharepoint.cn
@@ -185,27 +185,27 @@ DOMAIN-KEYWORD,1drv
 USER-AGENT,OneDrive*
 USER-AGENT,OneDriveiOSApp*
 
-#OneNote
+# OneNote
 DOMAIN-SUFFIX,onenote.com
 DOMAIN-SUFFIX,onenote.net
 
-#Skype
+# Skype
 DOMAIN-SUFFIX,skype.com
 DOMAIN-SUFFIX,skype.net
 DOMAIN-SUFFIX,skypeassets.com
 DOMAIN-SUFFIX,skypeforbusiness.com
 
-#Sway
+# Sway
 DOMAIN-SUFFIX,sway-cdn.com
 DOMAIN-SUFFIX,sway-extensions.com
 DOMAIN-SUFFIX,sway.com
 
-#VisualStudio
+# VisualStudio
 DOMAIN-SUFFIX,vsassets.io
 DOMAIN-SUFFIX,visualstudio.com
 DOMAIN-SUFFIX,visualstudio-staging.com
 
-#Xiaobing
+# Xiaobing
 DOMAIN-SUFFIX,aicscience.com
 DOMAIN-SUFFIX,mmais.com.cn
 DOMAIN-SUFFIX,msxiaobing.com
@@ -213,7 +213,7 @@ DOMAIN-SUFFIX,msxiaoice.com
 DOMAIN-SUFFIX,msxiaona.cn
 DOMAIN-SUFFIX,renlifang.com
 
-#Xbox
+# Xbox 
 DOMAIN-SUFFIX,xbox.com
 DOMAIN-SUFFIX,xbox.org
 DOMAIN-SUFFIX,xboxlive.com
@@ -235,7 +235,7 @@ DOMAIN-SUFFIX,xbox360.com
 DOMAIN-SUFFIX,xboxservices.com
 DOMAIN-SUFFIX,xbx.lv
 
-#Others
+# Others
 DOMAIN-SUFFIX,acompli.com
 DOMAIN-SUFFIX,wunderlist.com
 DOMAIN-SUFFIX,public-trust.com
@@ -377,7 +377,7 @@ DOMAIN-SUFFIX,what-fan.net
 DOMAIN-SUFFIX,yammer.com
 DOMAIN-SUFFIX,yammerusercontent.com
 
-#MicrosoftCDNs
+# Microsoft CDNs
 DOMAIN-SUFFIX,aka.ms
 DOMAIN-SUFFIX,msecnd.net
 DOMAIN-SUFFIX,live.com.akadns.net
