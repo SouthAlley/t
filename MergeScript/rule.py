@@ -47,7 +47,6 @@ RULES = {
     }
 }
 
-
 HEADER = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36'}
 TYPES = "Surge"
 file_paths = [TYPES + "/" + rule for rule in RULES.keys()]
@@ -76,7 +75,20 @@ def load_files(rules, folder):
         
         for future in futures:
             future.result()
-        print(f"新文件已下载至：{target_directory}")
+    
+    # 读取并应用替换规则
+    for path in [os.path.join(target_directory, f"{rule_name}.list") for rule_name in rules.keys()]:
+        with open(path, 'r', encoding='utf8') as file:
+            lines = [line.strip() for line in file.readlines()]
+
+        # 应用替换规则
+        modified_lines = [apply_replacements(line) for line in lines]
+
+        # 保存修改后的内容
+        with open(path, 'w', encoding='utf8') as file:
+            file.write('\n'.join(modified_lines))
+
+    print(f"新文件已下载并替换至：{target_directory}")
 
 if __name__ == '__main__':
     for folder, rules in RULES.items():
