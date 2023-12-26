@@ -26,9 +26,9 @@ for pattern, replacement in replacements:
 
 # 推送到本地仓库
 local_path = "SouthAlley/t"
-repo = Repo("SouthAlley/t")
+repo = Repo(os.path.join("/github/workspace", local_path))
 
-with open(f"{local_path}/fenliuxiuzheng_modified.list", "w") as file:
+with open(os.path.join(local_path, "fenliuxiuzheng_modified.list"), "w") as file:
     file.write(remote_content)
 
 repo.index.add([f"{local_path}/fenliuxiuzheng_modified.list"])
