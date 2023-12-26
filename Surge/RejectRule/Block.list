@@ -77,4 +77,4 @@ DOMAIN-SUFFIX,windowsazure.com
 DOMAIN-SUFFIX,windowsupdate.com
 DOMAIN-SUFFIX,wunderlist.com
 DOMAIN-SUFFIX,yammer.com
-host-SUFFIX,yammerusercontent.com
+DOMAIN-SUFFIX,yammerusercontent.com
