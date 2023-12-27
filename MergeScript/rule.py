@@ -77,19 +77,17 @@ def load_and_process_files(rules):
                     with open(target_path, 'w', encoding='utf8') as file:
                         file.write('\n'.join(modified_lines))
 
-                    print(f"文件处理完成：{target_path}")
-                except requests.exceptions.RequestException as e:
-                    print(f"处理文件时出现错误：{rule_url}, 错误：{e}")
-                except Exception as e:
-                    print(f"处理文件时出现未知错误：{rule_url}, 错误：{e}")
-            else:
-                print(f"规则缺少 URL：{rule_name}")
-        else:
-            print(f"规则不是字典：{key}")
-
 if __name__ == '__main__':
     for folder, rules in RULES.items():
-        if isinstance(rules, dict):
-            load_and_process_files(rules)
-        else:
-            print(f"规则不是字典：{rules}")
+        load_files(rules, folder)
+    
+    for path in file_paths:
+        # 创建文件夹，如果文件夹不存在
+        if not os.path.exists(path):
+            os.makedirs(path)
+            print(f"创建目录成功：{path}")
+        
+        # 在这里添加自定义逻辑，比如其他文件操作或处理
+        # ...
+
+        print(f"处理完成：{path}")
