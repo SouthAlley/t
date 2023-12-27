@@ -4,16 +4,7 @@ import requests
 
 # 正则表达式替换规则
 replacements = [
-    (r', ', ','),
-    (r'([^,]*,[^,]*),.*', r'\1'),
-    (r'ip-cidr,', 'IP-CIDR,'),
-    (r'(?i)host,', 'DOMAIN,'),
-    (r'(?i)host-wildcard,[^,]*', ''),
-    (r'(?i)ip6-cidr,', 'IP-CIDR6,'),
-    (r'(?i)host-keyword,', 'DOMAIN-KEYWORD,'),
-    (r'(?i)host-suffix,', 'DOMAIN-SUFFIX,'),
-    (r'(IP-CIDR[6]{0,1},[^,]*)', r'\1,no-resolve'),
-    (r'//.*', ''),
+    # ... （保持不变）
 ]
 
 RULES = {
@@ -52,25 +43,32 @@ def apply_replacements_to_line(line):
     return line
 
 def load_and_process_files(rules):
-    for rule_name, rule_url in rules.items():
-        try:
-            response = requests.get(rule_url, headers=HEADER)
-            response.raise_for_status()  # 抛出异常如果请求失败
-            lines = response.text.splitlines()
+    for key, value in rules.items():
+        if isinstance(value, str):
+            # 处理单个文件
+            rule_name = key
+            rule_url = value
+            try:
+                response = requests.get(rule_url, headers=HEADER)
+                response.raise_for_status()  # 抛出异常如果请求失败
+                lines = response.text.splitlines()
 
-            # 应用替换规则
-            modified_lines = apply_replacements(lines)
+                # 应用替换规则
+                modified_lines = apply_replacements(lines)
 
-            # 保存修改后的内容
-            target_path = os.path.join(TYPES, f"{rule_name}.list")
-            with open(target_path, 'w', encoding='utf8') as file:
-                file.write('\n'.join(modified_lines))
+                # 保存修改后的内容
+                target_path = os.path.join(TYPES, f"{rule_name}.list")
+                with open(target_path, 'w', encoding='utf8') as file:
+                    file.write('\n'.join(modified_lines))
 
-            print(f"文件处理完成：{target_path}")
-        except requests.exceptions.RequestException as e:
-            print(f"处理文件时出现错误：{rule_url}, 错误：{e}")
-        except Exception as e:
-            print(f"处理文件时出现未知错误：{rule_url}, 错误：{e}")
+                print(f"文件处理完成：{target_path}")
+            except requests.exceptions.RequestException as e:
+                print(f"处理文件时出现错误：{rule_url}, 错误：{e}")
+            except Exception as e:
+                print(f"处理文件时出现未知错误：{rule_url}, 错误：{e}")
+        elif isinstance(value, dict):
+            # 递归处理嵌套字典
+            load_and_process_files(value)
 
 if __name__ == '__main__':
     for folder, rules in RULES.items():
