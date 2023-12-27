@@ -51,6 +51,25 @@ def apply_replacements_to_line(line):
         line = re.sub(pattern, replacement, line)
     return line
 
+def process_string_rule(rule, folder):
+    # 这里假设字符串规则是直接的URL，你可以根据实际情况进行修改
+    target_path = os.path.join(TYPES, folder, f"{folder}.list")
+
+    try:
+        response = requests.get(rule, headers=HEADER)
+        response.raise_for_status()  # 如果请求失败则抛出异常
+
+        # 获取字符串内容并应用替换规则
+        content = apply_replacements_to_line(response.text)
+
+        # 保存修改后的内容
+        with open(target_path, "w", encoding="utf8") as f:
+            f.write(content)
+
+        print(f"处理完成：{target_path}")
+    except requests.exceptions.RequestException as e:
+        print(f"处理字符串规则失败：{rule}, 错误：{e}")
+
 def load_files(rules, folder):
     target_directory = os.path.join(TYPES, folder)
     os.makedirs(target_directory, exist_ok=True)
@@ -60,6 +79,8 @@ def load_files(rules, folder):
             if isinstance(rule_value, str):
                 # 如果值是字符串，直接下载并保存文件
                 executor.submit(download_and_save_file, rule_value, os.path.join(target_directory, f"{rule_name}.list"))
+                # 处理字符串规则
+                process_string_rule(rule_value, folder)
             elif isinstance(rule_value, dict):
                 # 如果值是字典，递归调用 load_files 处理子规则
                 load_files(rule_value, os.path.join(folder, rule_name))
@@ -87,16 +108,18 @@ if __name__ == '__main__':
         if isinstance(rules, str):
             # 如果值是字符串，直接下载并保存文件
             download_and_save_file(rules, os.path.join(TYPES, f"{folder}.list"))
+            # 处理字符串规则
+            process_string_rule(rules, folder)
         elif isinstance(rules, dict):
             # 如果值是字典，递归调用 load_files 处理子规则
             load_files(rules, folder)
-    
+
     for path in file_paths:
         # 创建文件夹，如果文件夹不存在
         if not os.path.exists(path):
             os.makedirs(path)
             print(f"创建目录成功：{path}")
-        
+
         # 在这里添加自定义逻辑，比如其他文件操作或处理
         # ...
 
