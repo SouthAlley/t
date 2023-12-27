@@ -17,11 +17,18 @@ replacements = [
 ]
 
 RULES = {
-    "fenliu": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/filter/fenliu.list",
-    "MyBlockAds": "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Surge/rule/Adblock4limbo_surge.list",
-    "MyRejectRule": "https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Reject.list",
-    "Block": "https://raw.githubusercontent.com/SouthAlley/z/main/Surge/G.list",
-    
+    "fenliu": {
+        "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/filter/fenliu.list",
+    },
+    "MyBlockAds": {
+        "url": "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Surge/rule/Adblock4limbo_surge.list",
+    },
+    "MyRejectRule": {
+        "url": "https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Reject.list",
+    },
+    "Block": {
+        "url": "https://raw.githubusercontent.com/SouthAlley/z/main/Surge/G.list",
+    },
     "CorrectionRule": {
         "fenliuxiuzheng": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/filter/fenliuxiuzheng.list",
         "MyCorrectionRule": "https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/QuantumultX/Rule/CorrectionRule.list",
@@ -53,32 +60,36 @@ def apply_replacements_to_line(line):
 
 def load_and_process_files(rules):
     for key, value in rules.items():
-        if isinstance(value, str):
-            # 处理单个文件
+        if isinstance(value, dict):
             rule_name = key
-            rule_url = value
-            try:
-                response = requests.get(rule_url, headers=HEADER)
-                response.raise_for_status()  # 抛出异常如果请求失败
-                lines = response.text.splitlines()
+            rule_url = value.get("url")
+            if rule_url:
+                try:
+                    response = requests.get(rule_url, headers=HEADER)
+                    response.raise_for_status()  # 抛出异常如果请求失败
+                    lines = response.text.splitlines()
 
-                # 应用替换规则
-                modified_lines = apply_replacements(lines)
+                    # 应用替换规则
+                    modified_lines = apply_replacements(lines)
 
-                # 保存修改后的内容
-                target_path = os.path.join(TYPES, f"{rule_name}.list")
-                with open(target_path, 'w', encoding='utf8') as file:
-                    file.write('\n'.join(modified_lines))
+                    # 保存修改后的内容
+                    target_path = os.path.join(TYPES, f"{rule_name}.list")
+                    with open(target_path, 'w', encoding='utf8') as file:
+                        file.write('\n'.join(modified_lines))
 
-                print(f"文件处理完成：{target_path}")
-            except requests.exceptions.RequestException as e:
-                print(f"处理文件时出现错误：{rule_url}, 错误：{e}")
-            except Exception as e:
-                print(f"处理文件时出现未知错误：{rule_url}, 错误：{e}")
-        elif isinstance(value, dict):
-            # 递归处理嵌套字典
-            load_and_process_files(value)
+                    print(f"文件处理完成：{target_path}")
+                except requests.exceptions.RequestException as e:
+                    print(f"处理文件时出现错误：{rule_url}, 错误：{e}")
+                except Exception as e:
+                    print(f"处理文件时出现未知错误：{rule_url}, 错误：{e}")
+            else:
+                print(f"规则缺少 URL：{rule_name}")
+        else:
+            print(f"规则不是字典：{key}")
 
 if __name__ == '__main__':
     for folder, rules in RULES.items():
-        load_and_process_files(rules)
+        if isinstance(rules, dict):
+            load_and_process_files(rules)
+        else:
+            print(f"规则不是字典：{rules}")
