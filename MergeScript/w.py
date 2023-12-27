@@ -6,14 +6,15 @@ from concurrent.futures import ThreadPoolExecutor
 
 # 正则表达式替换规则
 replacements = [
-    (r'\s+', ''),
-    (r',no-resolve', ''),
-    (r',(?:DIRECT$|direct$|REJECT$|reject$|PROXY$|proxy$)', ''),
-    (r'-suffix', '-SUFFIX'),
-    (r'-keyword', '-KEYWORD'),
-    (r'ip-cidr', 'IP-CIDR'),
-    (r'^(?:host|HOST)', 'DOMAIN'),
-    (r'IP6-CIDR', 'IP-CIDR6'),
+    (r', ', ','),
+    (r'([^,]*,[^,]*),.*', r'\1'),
+    (r'ip-cidr,', 'IP-CIDR,'),
+    (r'(?i)host,', 'DOMAIN,'),
+    (r'(?i)host-wildcard,[^,]*', '')
+    (r'(?i)ip6-cidr,', 'IP-CIDR6,'),
+    (r'(?i)host-keyword,', 'DOMAIN-KEYWORD,'),
+    (r'(?i)host-suffix,', 'DOMAIN-SUFFIX,'), 
+    (r'(IP-CIDR[6]{0,1},[^,]*)', r'\1,no-resolve'),
     (r'//.*', ''),
 ]
 
@@ -26,24 +27,7 @@ RULES = {
         "fenliu": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/filter/fenliu.list",
         "MyBlockAds": "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Surge/rule/Adblock4limbo_surge.list",
         "MyRejectRule": "https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Reject.list",
-        "Block": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list"
-    },
-    "StreamingRule": {
-        "Netflix": "https://raw.githubusercontent.com/Jard1n/VPN_Tool/main/Surge/Rule/PayPal.list",
-        "Disney": "https://raw.githubusercontent.com/Jard1n/VPN_Tool/main/Surge/Rule/OpenAI.list",
-        "YouTube": "https://raw.githubusercontent.com/Jard1n/VPN_Tool/main/Surge/Rule/TikTok.list",
-        "Spotify": "https://raw.githubusercontent.com/Jard1n/VPN_Tool/main/Surge/Rule/ProxyMedia.list",
-        "AppleTV": "https://raw.githubusercontent.com/Jard1n/VPN_Tool/main/Surge/Rule/Twitter.list",
-        "Netfli": "https://raw.githubusercontent.com/Jard1n/VPN_Tool/main/Surge/Rule/Telegram.list",
-        "Disne": "https://raw.githubusercontent.com/Jard1n/VPN_Tool/main/Surge/Rule/Game.list",
-        "YouTub": "https://raw.githubusercontent.com/Jard1n/VPN_Tool/main/Surge/Rule/Microsoft.list",
-        "Spotif": "https://raw.githubusercontent.com/Jard1n/VPN_Tool/main/Surge/Rule/Google.list",
-        "AppleT": "https://raw.githubusercontent.com/Jard1n/VPN_Tool/main/Surge/Rule/AppleProxy.list",
-        "Spoti": "https://raw.githubusercontent.com/Jard1n/VPN_Tool/main/Surge/Rule/Apple.list",
-        "Apple": "https://raw.githubusercontent.com/Jard1n/VPN_Tool/main/Surge/Rule/Proxy.list",
-        "Appl": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/BilibiliHMT.list",
-        "App": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Streaming/Video/bilibili.list",
-        
+        "Block": "https://raw.githubusercontent.com/SouthAlley/z/main/Surge/G.list",
     }
 }
 
@@ -103,4 +87,3 @@ if __name__ == '__main__':
         # ...
 
         print(f"处理 {path} 完成")
-
