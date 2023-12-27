@@ -83,7 +83,12 @@ def load_files(rules, folder):
 
 if __name__ == '__main__':
     for folder, rules in RULES.items():
-        load_files(rules, folder)
+        if isinstance(rules, str):
+            # 如果值是字符串，直接下载并保存文件
+            download_and_save_file(rules, os.path.join(TYPES, f"{folder}.list"))
+        elif isinstance(rules, dict):
+            # 如果值是字典，递归调用 load_files 处理子规则
+            load_files(rules, folder)
     
     for path in file_paths:
         # 创建文件夹，如果文件夹不存在
