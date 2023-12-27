@@ -4,7 +4,16 @@ import requests
 
 # 正则表达式替换规则
 replacements = [
-    # ... （保持不变）
+    (r', ', ','),
+    (r'([^,]*,[^,]*),.*', r'\1'),
+    (r'ip-cidr,', 'IP-CIDR,'),
+    (r'(?i)host,', 'DOMAIN,'),
+    (r'(?i)host-wildcard,[^,]*', ''),
+    (r'(?i)ip6-cidr,', 'IP-CIDR6,'),
+    (r'(?i)host-keyword,', 'DOMAIN-KEYWORD,'),
+    (r'(?i)host-suffix,', 'DOMAIN-SUFFIX,'),
+    (r'(IP-CIDR[6]{0,1},[^,]*)', r'\1,no-resolve'),
+    (r'//.*', ''),
 ]
 
 RULES = {
