@@ -24,11 +24,10 @@ RULES = {
     "MyRejectRule": "https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Reject.list",
     "Block": "https://raw.githubusercontent.com/SouthAlley/z/main/Surge/G.list",
     "CorrectionRule": {
-    "fenliuxiuzheng": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/filter/fenliuxiuzheng.list",
-    "MyCorrectionRule": "https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/QuantumultX/Rule/CorrectionRule.list",
-},
+        "fenliuxiuzheng": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/filter/fenliuxiuzheng.list",
+        "MyCorrectionRule": "https://raw.githubusercontent.com/GiveYou32Likes/Profile/main/QuantumultX/Rule/CorrectionRule.list",
+    },
 }
-
 
 HEADER = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36'}
 TYPES = "Surge"
@@ -56,11 +55,15 @@ def load_files(rules, folder):
     os.makedirs(target_directory, exist_ok=True)
 
     with ThreadPoolExecutor() as executor:
-        futures = [executor.submit(download_and_save_file, rule_url, os.path.join(target_directory, f"{rule_name}.list")) for rule_name, rule_url in rules.items()]
-        for future in futures:
-            future.result()
+        for rule_name, rule_value in rules.items():
+            if isinstance(rule_value, str):
+                # 如果值是字符串，直接下载并保存文件
+                executor.submit(download_and_save_file, rule_value, os.path.join(target_directory, f"{rule_name}.list"))
+            elif isinstance(rule_value, dict):
+                # 如果值是字典，递归调用 load_files 处理子规则
+                load_files(rule_value, os.path.join(folder, rule_name))
 
-    # 读取并应用替换规则
+    # 其余部分保持不变
     for rule_name in rules.keys():
         path = os.path.join(target_directory, f"{rule_name}.list")
         try:
