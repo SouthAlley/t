@@ -61,12 +61,13 @@ def append_del_to_my_block_ads(del_path, my_block_ads_path):
 def remove_delrule_from_my_block_ads(delrule_path, my_block_ads_path):
     try:
         with open(delrule_path, 'r', encoding='utf8') as delrule_file:
-            delrule_content = delrule_file.read()
+            delrule_content = delrule_file.read().strip()
 
         with open(my_block_ads_path, 'r', encoding='utf8') as my_block_ads_file:
             lines = my_block_ads_file.readlines()
 
-        filtered_lines = [line for line in lines if delrule_content not in line]
+        # 使用正则表达式匹配行并删除
+        filtered_lines = [line for line in lines if not re.search(re.escape(delrule_content), line)]
 
         with open(my_block_ads_path, 'w', encoding='utf8') as my_block_ads_file:
             my_block_ads_file.writelines(filtered_lines)
