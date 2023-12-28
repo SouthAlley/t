@@ -29,7 +29,7 @@ TYPES = "Surge"
 def download_and_save_file(url, target_path):
     try:
         response = requests.get(url, headers=HEADER)
-        response.raise_for_status()  # 抛出异常如果请求失败
+        response.raise_for_status()
         with open(target_path, "wb") as f:
             f.write(response.content)
         print(f"文件下载完成：{target_path}")
@@ -50,13 +50,11 @@ if __name__ == '__main__':
     for rule_name, rule_url in RULES.items():
         try:
             response = requests.get(rule_url, headers=HEADER)
-            response.raise_for_status()  # 抛出异常如果请求失败
+            response.raise_for_status()
             lines = response.text.splitlines()
 
-            # 应用替换规则
             modified_lines = apply_replacements(lines)
 
-            # 保存修改后的内容
             target_path = os.path.join(TYPES, f"{rule_name}.list")
             with open(target_path, 'w', encoding='utf8') as file:
                 file.write('\n'.join(modified_lines))
