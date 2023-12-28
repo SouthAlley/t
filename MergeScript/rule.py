@@ -95,9 +95,9 @@ if __name__ == '__main__':
             print(f"处理文件时出现未知错误：{rule_url}, 错误：{e}")
 
     # 调用追加内容函数
-    del_file_path = 'del.ini'
+    del_file_path = 'rule/del.ini'
     append_del_to_my_block_ads(del_file_path, os.path.join(TYPES, 'MyBlockAds.list'))
 
     # 调用删除匹配内容函数
-    delrule_file_path = 'delrule.ini'
+    delrule_file_path = 'rule/delrule.ini'
     remove_delrule_from_my_block_ads(delrule_file_path, os.path.join(TYPES, 'MyBlockAds.list'))
