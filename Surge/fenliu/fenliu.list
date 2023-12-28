@@ -1,10 +1,10 @@
 #!name=广告拦截合集-分流
-#!desc=(F)针对部分APP开屏广告，应用内广告进行拦截，某些APP要清除缓存或者重新安装APP，拦截广告才会生效！
+#!desc=(F)针对部分APP和小程序广告进行拦截，某些APP要清除缓存或者重新安装APP，拦截广告才会生效！
 #!author=fmz200
-#!homepage=https:
-#!icon=https:
-#!raw-url=https:
-#!tg-group：https:
+#!homepage=https://github.com/fmz200/wool_scripts
+#!icon=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/author/NaiSi_01.png
+#!raw-url=https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/filter/fenliu.list
+#!tg-group：https://t.me/lanjieguanggao
 #!date：2023-12-0623:56:00
 #!support：约9392行
 #!proxy-select：reject
@@ -339,8 +339,8 @@ DOMAIN,lc.map.baidu.com
 IP-CIDR,180.76.76.200/32
 
 #>哔哩哔哩
-;DOMAIN,mall.bilibili.com
-;DOMAIN,passport.bilibili.com
+;HOST,mall.bilibili.com
+;HOST,passport.bilibili.com
 DOMAIN-KEYWORD,api.sobot.com
 DOMAIN-SUFFIX,cm.ad.bilibili.com
 DOMAIN-SUFFIX,cm.adcommon.bilibili.com
@@ -366,7 +366,7 @@ DOMAIN-SUFFIX,iad-08.braze.com
 
 #>>>>>>>>>>>>>>>✅C✅<<<<<<<<<<<<<<
 #>C&JMarketing
-#https:
+#https://www.zhihu.com/question/46746200
 DOMAIN-SUFFIX,alienskins.cn
 DOMAIN-SUFFIX,anydeskchina.cn
 DOMAIN-SUFFIX,betterzipcn.com
@@ -412,7 +412,7 @@ IP-CIDR,211.161.101.110/32
 DOMAIN-KEYWORD,image.bianxianmao.com
 
 #>滴滴青桔（支付界面图片有误杀）
-;DOMAIN-KEYWORD,pt-starimg.didistatic.com
+;host-KEYWORD,pt-starimg.didistatic.com
 IP-CIDR,203.107.1.1/24
 
 #>懂车帝
@@ -482,7 +482,7 @@ DOMAIN,ifengad.3g.ifeng.com
 
 #>>>>>>>>>>>>>>>✅G✅<<<<<<<<<<<<<<
 #>GozenData
-#https:
+#https://www.v2ex.com/t/772523
 DOMAIN-SUFFIX,gozendata.com
 DOMAIN-SUFFIX,gzads.com
 DOMAIN-SUFFIX,gz-data.com
@@ -519,7 +519,7 @@ DOMAIN-SUFFIX,www.google-analytics.com
 DOMAIN,ads.youtube.com
 
 #>高德
-;DOMAIN,restapi.amap.com
+;host,restapi.amap.com
 DOMAIN-SUFFIX,adiu.amap.com
 DOMAIN,aboard.apilocate.amap.com
 DOMAIN,apiinit.amap.com
@@ -543,8 +543,8 @@ DOMAIN,apis.alenable.com
 
 #>>>>>>>>>>>>>>>✅H✅<<<<<<<<<<<<<<
 #>HDO
-;DOMAIN-SUFFIX,applovin.com
-;DOMAIN-SUFFIX,applvn.com
+;host-SUFFIX,applovin.com
+;host-SUFFIX,applvn.com
 
 #>HuaweiAspiegelBot
 IP-CIDR,114.119.160.0/21
@@ -575,7 +575,7 @@ DOMAIN,livewebbs2.msstatic.com
 DOMAIN,business.msstatic.com
 
 #>哈啰大部分图片无法正常加载
-;DOMAIN-KEYWORD,assets.51downapp.cn
+;host-KEYWORD,assets.51downapp.cn
 
 #>黄油相机#开屏广告感谢#Dragon分享
 DOMAIN-SUFFIX,anythinktech.com
@@ -616,7 +616,7 @@ DOMAIN-KEYWORD,s2.pstatp.com
 DOMAIN-KEYWORD,s3.pstatp.com
 DOMAIN-KEYWORD,a3.pstatp.com
 DOMAIN-KEYWORD,a3.bytecdn.cn
-;DOMAIN-KEYWORD,ichannel.snssdk.com
+;host-KEYWORD,ichannel.snssdk.com
 DOMAIN,ad.toutiao.com
 DOMAIN,dsp.toutiao.com
 
@@ -653,8 +653,8 @@ DOMAIN,rp.hpplay.cn
 DOMAIN,rpt.hpplay.cn
 
 #>快手
-;DOMAIN-SUFFIX,yximgs.com
-;DOMAIN,js-ad.a.yximgs.com
+;host-SUFFIX,yximgs.com
+;host,js-ad.a.yximgs.com
 DOMAIN-SUFFIX,e.kuaishou.com
 DOMAIN-SUFFIX,cm.downloader.commercial.kuaishou.com
 DOMAIN-SUFFIX,cm.ad.gifshow.com
@@ -896,18 +896,18 @@ DOMAIN-KEYWORD,log-api.pangolin-sdk-toutiao.com
 DOMAIN-KEYWORD,api-access.pangolin-sdk-toutiao.com
 
 #>皮皮虾（比较激进，需要的自己开启）
-;DOMAIN-KEYWORD,snssdk.com
-;DOMAIN-KEYWORD,mssdk.bytedance.com
-;DOMAIN-KEYWORD,api.ribaoapi.com
-;DOMAIN-KEYWORD,apps.bytesfield.com
-;DOMAIN-KEYWORD,bytesmanager.com
-;DOMAIN-KEYWORD,mssdk-bu.bytedance.com
-;DOMAIN-KEYWORD,365yg.com
-;DOMAIN-KEYWORD,ppx.byteimg.com
-;DOMAIN-KEYWORD,i.snssdk.com
+;host-KEYWORD,snssdk.com
+;host-KEYWORD,mssdk.bytedance.com
+;host-KEYWORD,api.ribaoapi.com
+;host-KEYWORD,apps.bytesfield.com
+;host-KEYWORD,bytesmanager.com
+;host-KEYWORD,mssdk-bu.bytedance.com
+;host-KEYWORD,365yg.com
+;host-KEYWORD,ppx.byteimg.com
+;host-KEYWORD,i.snssdk.com,reject
 
 #>影响端传媒正常运行，默认关闭
-;DOMAIN-SUFFIX,cloudfront.net
+;host-SUFFIX,cloudfront.net
 
 
 
@@ -929,7 +929,7 @@ DOMAIN,pgdt.ugdtimg.com
 
 #>汽车之家
 DOMAIN-KEYWORD,adm3.autoimg.cn
-;DOMAIN-KEYWORD,audid-api.taobao.com
+;host-KEYWORD,audid-api.taobao.com
 DOMAIN-KEYWORD,collectionpv.che168.com
 DOMAIN-KEYWORD,adproxy.autohome.com
 DOMAIN-KEYWORD,applogapi.autohome.com
@@ -978,7 +978,7 @@ DOMAIN-SUFFIX,aty.sohu.com
 DOMAIN,hui.sohu.com
 
 #>搜狗
-;DOMAIN,indivi-cdn.shouji.sogou.com
+;host,indivi-cdn.shouji.sogou.com
 DOMAIN-SUFFIX,epro.sogou.com
 DOMAIN-SUFFIX,golden1.sogou.com
 DOMAIN-SUFFIX,inte.sogou.com
@@ -1002,7 +1002,7 @@ DOMAIN-SUFFIX,jdqd.jd.com
 DOMAIN-SUFFIX,shouji.sougou.com
 
 #>搜狗输入法
-;DOMAIN-KEYWORD,business-cdn.shouji.sogou.com
+;host-KEYWORD,business-cdn.shouji.sogou.com
 
 #>深圳通微信小程序
 DOMAIN-SUFFIX,wxsnsdythumb.wxs.qq.com
@@ -1043,7 +1043,7 @@ DOMAIN-SUFFIX,apoll.m.taobao.com
 DOMAIN-SUFFIX,h-adashx.ut.taobao.com
 DOMAIN-SUFFIX,w.m.taobao.com
 DOMAIN,tunion-api.m.taobao.com
-;DOMAIN-SUFFIX,ai.m.taobao.com
+;host-SUFFIX,ai.m.taobao.com
 DOMAIN-SUFFIX,re.m.taobao.com
 DOMAIN-SUFFIX,agoodm.m.taobao.com
 DOMAIN-SUFFIX,ai.taobao.com
@@ -1312,7 +1312,7 @@ DOMAIN-SUFFIX,hao.uc.cn
 DOMAIN-SUFFIX,lobmuc.cn
 DOMAIN-SUFFIX,open-uc.cn
 DOMAIN-SUFFIX,puds.test.uae.uc.cn
-;DOMAIN-SUFFIX,t.uc.cn
+;host-SUFFIX,t.uc.cn
 DOMAIN-SUFFIX,track.uc.cn
 DOMAIN-SUFFIX,wmedia-track.uc.cn
 DOMAIN-SUFFIX,woodpecker.uc.cn
@@ -1401,7 +1401,7 @@ DOMAIN-KEYWORD,tui.weibo.com
 DOMAIN-KEYWORD,wax.weibo.com.cn
 DOMAIN-KEYWORD,ad.weibo.com
 DOMAIN-KEYWORD,adstrategy.biz.weibo.com
-;DOMAIN-KEYWORD,s.weibo.com
+;host-KEYWORD,s.weibo.com
 DOMAIN-KEYWORD,vs.biz.weibo.com
 #微博开屏广告预加载
 DOMAIN,bootpreload.uve.weibo.com
@@ -1508,7 +1508,7 @@ DOMAIN,saxs.sina.com.cn
 DOMAIN,saxn.sina.com.cn
 
 #>雪球（可以去掉倒计时，但是误杀很多图片，默认关闭）
-;DOMAIN-KEYWORD,xqimg.imedao.com
+;host-KEYWORD,xqimg.imedao.com
 
 #>向日葵见重写
 
@@ -1653,12 +1653,12 @@ IP-CIDR,122.229.8.47/32
 IP-CIDR,122.229.29.89/32
 
 #>中信银行
-;DOMAIN-SUFFIX,sis.jpush.io
-;DOMAIN-SUFFIX,s.jpush.cn
-;DOMAIN-SUFFIX,jpush.cn
-;DOMAIN-SUFFIX,im64.jpush.cn
-;DOMAIN-SUFFIX,im.jpush.cn
-;DOMAIN-SUFFIX,jpush.html5.qq.com
+;host-SUFFIX,sis.jpush.io
+;host-SUFFIX,s.jpush.cn
+;host-SUFFIX,jpush.cn
+;host-SUFFIX,im64.jpush.cn
+;host-SUFFIX,im.jpush.cn
+;host-SUFFIX,jpush.html5.qq.com
 
 #>中华万年历广告
 DOMAIN-KEYWORD,lkme.cc
@@ -1684,7 +1684,6 @@ DOMAIN-KEYWORD,ad-sign.byteimg.com
 #>>>>>>>>>>>>>>>✅其他广告✅<<<<<<<<<<<<<<
 DOMAIN-KEYWORD,huichuan-mc.sm.cn
 DOMAIN-KEYWORD,extlog.snssdk.com
-;DOMAIN-KEYWORD,is.snssdk.com
 DOMAIN-KEYWORD,mobads.baidu.com
 DOMAIN-KEYWORD,s3a.pstatp.com
 DOMAIN-KEYWORD,sdfp.snssdk.com
@@ -1787,7 +1786,7 @@ DOMAIN-KEYWORD,dlads
 DOMAIN,dagonghuzhu.com
 DOMAIN-KEYWORD,xxshuyuan
 DOMAIN-KEYWORD,haowanyou
-;DOMAIN-KEYWORD,dat8
+;host-KEYWORD,dat8
 DOMAIN-KEYWORD,112wan
 DOMAIN-KEYWORD,dfkj8
 DOMAIN-KEYWORD,mifengv
@@ -1838,7 +1837,7 @@ DOMAIN-KEYWORD,bongacash
 DOMAIN-KEYWORD,bngpt
 DOMAIN-KEYWORD,stunninglover
 DOMAIN-KEYWORD,highwebmedia
-;DOMAIN-KEYWORD,jads
+;host-KEYWORD,jads
 DOMAIN-KEYWORD,trwl1
 DOMAIN-KEYWORD,vidoza
 DOMAIN-KEYWORD,o333o
@@ -4139,7 +4138,7 @@ DOMAIN-SUFFIX,d.39.net
 DOMAIN-SUFFIX,d.admx.baixing.com
 DOMAIN-SUFFIX,d.agkn.com
 DOMAIN-SUFFIX,d.annarbor.com
-#DOMAIN-SUFFIX,d.applovin.com
+#host-SUFFIX,d.applovin.com
 DOMAIN-SUFFIX,d.beigedi.com
 DOMAIN-SUFFIX,d.businessinsider.com
 DOMAIN-SUFFIX,d.clkservice.youdao.com
@@ -7679,7 +7678,7 @@ DOMAIN-SUFFIX,rs.sinajs.cn
 DOMAIN-SUFFIX,rs1.rensheng5.com
 DOMAIN-SUFFIX,rsas.szzek.com
 DOMAIN-SUFFIX,rsccs.com
-#DOMAIN-SUFFIX,rt.applovin.com
+#host-SUFFIX,rt.applovin.com
 DOMAIN-SUFFIX,rt.funshion.net
 DOMAIN-SUFFIX,rt.gsspat.jp
 DOMAIN-SUFFIX,rtas.videocc.net
@@ -7955,7 +7954,7 @@ DOMAIN-SUFFIX,shanghaironghua.com
 DOMAIN-SUFFIX,shanglinli.com
 DOMAIN-SUFFIX,shangz99991.com
 DOMAIN-SUFFIX,share.gzdsw.com
-#DOMAIN-SUFFIX,shared.youdao.com
+#host-SUFFIX,shared.youdao.com
 DOMAIN-SUFFIX,sharedadHOST.com
 DOMAIN-SUFFIX,sharrysweb.com
 DOMAIN-SUFFIX,shbywsd.cn
@@ -8734,8 +8733,8 @@ DOMAIN-SUFFIX,v-sence.gentags.net
 DOMAIN-SUFFIX,vsnoon.com
 DOMAIN-SUFFIX,vt.bjhdonline.com
 DOMAIN-SUFFIX,vtale.org
-#DOMAIN-SUFFIX,vungle.cn
-#DOMAIN-SUFFIX,vungle.com
+#host-SUFFIX,vungle.cn
+#host-SUFFIX,vungle.com
 DOMAIN-SUFFIX,vupload.duowan.com
 DOMAIN-SUFFIX,vvlog.moviebox.baofeng.com
 DOMAIN-SUFFIX,vvv.ieduw.com
@@ -9747,7 +9746,7 @@ DOMAIN-SUFFIX,mmstat.com
 DOMAIN-SUFFIX,4paradigm.com
 DOMAIN-SUFFIX,catch.gift
 DOMAIN-SUFFIX,pubnative.net
-#DOMAIN-SUFFIX,applovin.com
+#host-SUFFIX,applovin.com
 DOMAIN-SUFFIX,inner-active.mobi
 DOMAIN-SUFFIX,mdfull.com
 DOMAIN-SUFFIX,openx.net
@@ -10069,4 +10068,5 @@ DOMAIN-SUFFIX,zoomanalytics.co
 DOMAIN-SUFFIX,ads.linkedin.com
 DOMAIN,analytics.slashdotmedia.com
 DOMAIN,zgsdk.zhugeio.com
+
 
