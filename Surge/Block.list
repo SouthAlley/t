@@ -1,8 +1,8 @@
 # 内容：Microsoft
 # 数量：79条
 DOMAIN-KEYWORD,1drv
-DOMAIN-KEYWORD,micro,soft
-DOMAIN-SUFFIX,aadrm.com,6,8
+DOMAIN-KEYWORD,micro
+DOMAIN-SUFFIX,aadrm.com
 DOMAIN-SUFFIX,acompli.com
 DOMAIN-SUFFIX,acompli.net
 DOMAIN-SUFFIX,aka.ms
@@ -77,4 +77,4 @@ DOMAIN-SUFFIX,windowsazure.com
 DOMAIN-SUFFIX,windowsupdate.com
 DOMAIN-SUFFIX,wunderlist.com
 DOMAIN-SUFFIX,yammer.com
-host-SUFFIX,yammerusercontent.com
+DOMAIN-SUFFIX,yammerusercontent.com
