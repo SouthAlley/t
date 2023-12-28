@@ -17,15 +17,15 @@ replacements = [
     (r'IP6-CIDR', 'IP-CIDR6'),
 ]
 
-RULES = {
-        "fenliu": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/filter/fenliu.list",
-        "Hijacking": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Hijacking/Hijacking.list",
-        "MyBlockAds": "https://raw.githubusercontent.com/RuCu6/QuanX/main/Rules/MyBlockAds.list",
+FOLDERS_AND_RULES = {
+    "fenliu": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/filter/fenliu.list",
+    "Hijacking": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Hijacking/Hijacking.list",
+    "MyBlockAds": "https://raw.githubusercontent.com/RuCu6/QuanX/main/Rules/MyBlockAds.list",
 }
 
 HEADER = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36'}
 TYPES = "Surge"
-file_paths = [TYPES + "/" + rule for rule in RULES.keys()]
+file_paths = [TYPES + "/" + folder for folder in FOLDERS_AND_RULES.keys()]
 
 def download_and_save_file(url, target_path):
     response = requests.get(url, headers=HEADER)
@@ -54,15 +54,14 @@ def load_files(rules, folder):
         print(f"新文件已下载至：{target_directory}")
 
 if __name__ == '__main__':
-    for folder, rules in RULES.items():
-        load_files(rules, folder)
+    for folder, rule in FOLDERS_AND_RULES.items():
+        load_files({folder: rule}, folder)
+    
     for path in file_paths:
-        # 创建文件夹，如果文件夹不存在
         if not os.path.exists(path):
             os.makedirs(path)
             print(f"创建目录 {path} 成功")
             
-        # 下面是替换规则的代码
         for file_name in os.listdir(path):
             file_path = os.path.join(path, file_name)
             if os.path.isfile(file_path):
