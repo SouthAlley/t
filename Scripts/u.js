@@ -8,7 +8,7 @@
 > TgChannel         https://t.me/ddgksf2021
 > Contribute        https://t.me/ddgksf2013_bot
 > Feedback          📮 ddgksf2013@163.com 📮
-> UpdateTime        2023-12-26
+> UpdateTime        2024-01-02
 > Suitable          自行观看“# > ”注释内容，解锁是暂时的，购买也不是永久的[订阅、跑路]
 > Attention         如需引用请注明出处，谢谢合作！
 > Attention         使用此脚本，会导致AppleStore无法切换账户，解决方法[关闭QX切换账户，或关闭MITM，或删除脚本]
@@ -31,6 +31,10 @@ https://apps.apple.com/us/app/id1490057568
 https://apps.apple.com/us/app/id1458583388
 # > 08 intolive
 https://apps.apple.com/us/app/id1061859052
+# > 09 落格输入法经典版
+https://apps.apple.com/cn/app/id1140465593
+# > 10 waterminder
+https://apps.apple.com/cn/app/id653031147
 
 
 [rewrite_local]
@@ -64,7 +68,8 @@ var productidmap={
 	"com.aaaalab.nepacket":{"name":"http","product_id":"com.li.blur.pro.month","mark":0},
 	"FuYuan.inkDiary":{"name":"Secai","product_id":"FuYuan.inkDiary.YearB.Pro","mark":0},
 	"me.imgbase.imgplay":{"name":"imgplay","product_id":"me.imgbase.imgplay.subscriptionYearly","mark":0},
-	"com.mediaeditor.video":{"name":"PrettyUp","product_id":"yearautorenew","mark":0}
+	"com.mediaeditor.video":{"name":"PrettyUp","product_id":"yearautorenew","mark":0},
+	"com.kobaltlab.HashPhotos":{"name":"HashPhotos","product_id":"com.kobaltlab.HashPhotos.iap.pro1year","mark":0}
 }
 
 // ========= 固定部分 ========= //
