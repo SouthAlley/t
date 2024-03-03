@@ -30,7 +30,7 @@ jobs:
         for file in Adblock4limbo.user.js; do
           if [ -f "$file" ]; then
             # DOMAIN, 移除
-            sed -i '/daohang_build();/i \\//' "$file"
+            sed -i 's/daohang_build();/\/\/&/' "$file"
           else
             echo "$file not found."
           fi
