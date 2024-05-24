@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo.[github]
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.4.05.08
+// @version      0.4.05.23
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去广告计划油猴版；新增导航按钮；通过 JavaScript 移除Pornhub/搜索引擎（Bing/Google）广告及内容农场结果清除/泥巴影视/低端影视（可避免PC端10秒广告倒计时）/欧乐影院/独播库/ibvio/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/紳士漫畫/91porn/哔滴影视（加速跳过视频广告/避免反查）/555电影网（o8tv）等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！其他：优化PC端未登录状态访问知乎浏览体验（动态移除登录窗口/永远不会跳转至首页登录页面）；
 // @author       limbopro
@@ -24,6 +24,7 @@
 // @match        https://www.pornhub.com/*
 // @match        https://missav.com/*
 // @match        https://91porn.com/*
+// @match        https://91porna.com/*
 // @match        https://www.91porn.com/*
 // @match        https://avple.tv/*
 // @match        https://18comic.org/*
@@ -69,8 +70,12 @@
 // @match        https://m.yhpdm.com/*
 // @match        https://www.nivod4.tv/*
 // @match        https://www.nivod8.tv/*
+// @match        https://www.nivod9.tv/*
 // @match        https://m.nivod4.tv/*
 // @match        https://m.nivod8.tv/*
+// @match        https://m.nivod9.tv/*
+// @include      https://m.nivod*.tv/*
+// @include      https://www.nivod*.tv/*
 // @match        https://www.javbus.com/*
 // @match        https://cn1.91short.com/*
 // @match        https://xiaobaotv.net/*
@@ -99,9 +104,10 @@
 // @match        https://www.olevod.one/*
 // @match        https://t.me/*
 // @match        https://twitter.com/*
-// @match        https://tameikegoro.jp/
-// @match        https://njav.tv/
-// @match        https://www.ntdm9.com/
+// @match        https://tameikegoro.jp/*
+// @match        https://njav.tv/*
+// @match        https://www.ntdm9.com/*
+// @match        https://www.novel543.com/*
 // @match        https://www.javlibrary.com/*
 // @match        https://rouman5.com/*
 // @exclude      https://limbopro.com/*
@@ -110,7 +116,6 @@
 // @exclude      https://developer.mozilla.org/
 // @exclude      https://www.youtube.com/*
 // @exclude      https://www.xvideos.com/*
-// @match        https://*/*
 // @require      https://update.greasyfork.org/scripts/478651/Twitter%20%E7%BD%91%E9%A1%B5%E7%89%88%E5%A4%9A%E8%A7%86%E9%A2%91gif%E4%B8%8B%E8%BD%BD%5Blimbopro%5D.user.js
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=limbopro.com
 // @run-at       document-end
@@ -235,6 +240,7 @@ var imax = {
         dy555: "div.module {z-index:1!important} div.popup.popup-tips.none.popupShow, a[target=\"_blank\"] img,.playtop.col-pd,a[href*=\"?channelCode=\"] > img[src*=\".com:\"],#adsbox,div.myui-panel.myui-panel-bg.clearfix.wapad {display:none !important}", // 555影院
         wnacg: "div > img[src*='gif'],div.sh,div > a[target='_blank'] > img {display:none !important}", // 绅士漫画
         missav: "a[href*='bit.ly'][target=_blank], a[href*='/vip'],img[src*='.gif'], iframe,#a[href*='//bit.ly/'],div[style*='z-index: 1001'],ul.space-y-2.mb-4.ml-4.list-disc.text-nord14,div.space-y-5.mb-5,div.under_player,div[style=\"width: 300px; height: 250px;\"] {display:none !important; pointer-events:none important;} body{overflow-x:hidden;}", //  MissAV
+        porna91: "div.filters, div.filters > div#videobox, div.row > div.col.col-24 { min-height: 0px !important; display:none !important; pointer-events: none !important;}", // 91porna
         porn91: "br, .ad_img,img[class*=\"ad_img\"], iframe[src*=\"ads\"], img[href*='.gif'] {display:none !important; pointer-events: none !important;}", // 91porn
         zhihuAds: "div.css-1izy64v,[class='Card AppBanner'],.Footer,.Banner-link,div.Pc-word {display:none !important; pointer-events: none !important;}",
         pornhubx: ".topAdContainter, a[href*='ads'], div.adContainer.clearfix.noBottom, .adContainer.clearfix.middleVideoAdContainer, div.adContainer.clearfix.noBottom, a[href*='fuck'][target='_blank'], [data-href][target='_blank'],iframe, a.ad#link, #header.hasAdAlert {grid-template-rows:60px 40px 0px !important} div.hd.clear, div > img[data-title][srcset], #js-networkBar,div#abAlert, .adsbytrafficjunky, #pb_template, .sponsor-text, #adsbox, .abAlertShown, .abAlertInner, #main-container > .abovePlayer, [rel*='noopener nofollow'],a[href^=\"http://ads.trafficjunky.net/\"], .topAdContainter,.adsbytrafficjunky,.ad-link  {height:0px !important; display:none !important; pointer-events:none;}", // pornhub
@@ -262,7 +268,9 @@ var imax = {
         olevod: "#adsbox, .ads-bg {display:none!important}",
         ntdm9: "#adsbox, .yammohxz_b {display:none !important; pointer-events: none !important;}",
         njav: "iframe[width='300px'] {display:none!important}",
-        rouman: "div[role='dialog'] {display:none !important; pointer-events: none !important;}"
+        jav_common: ".jw-wrapper > div[style=\"opacity: 0; visibility: hidden; overflow: hidden; display: block; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;\"],div[style^=\"position:fixed;inset:0px;z-index:2147483647;background:black;opacity:0.01\"] {height:0px; display:none !important; pointer-events: none !important;}",
+        rouman: "div[role='dialog'] {display:none !important; pointer-events: none !important;}",
+        novel543: "div#adfoot, div.px-3.py-3, #adfoot, .gadBlock {height:0px; display:none !important; pointer-events: none !important;}"
         //button_common: "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;" // 按钮/输入框通用样式
     },
     function: {
@@ -273,7 +281,8 @@ function values() {
     var adsDomain = [
         "pornhub",
         "missav",
-        "91porn",
+        "91porna",
+        "91porn.",
         "avple",
         "18comic",
         "wnacg",
@@ -323,6 +332,7 @@ function values() {
         'njav',
         'ntdm9',
         'rouman',
+        'novel543',
         "zhihu"
     ]
 
@@ -414,9 +424,27 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
 
             //missAv_adsRemove();
             break;
-        case '91porn':
+
+        case '91porna':
             //cloudflare_captchaBypass();
+            css_adsRemove(imax.css.porna91);
+            //_91porn_videoplay_ads();
+
+            // 播放页空白
+
+            document.querySelectorAll("br").forEach((x) => {
+                if (x.clientHeight = 0) {
+                    x.remove()
+                }
+            })
+
+            break;
+        case '91porn.':
+            
+            cloudflare_captchaBypass();
             css_adsRemove(imax.css.porn91);
+            //css_adsRemove(imax.css.porna91);
+
             //_91porn_videoplay_ads();
 
             // 播放页空白
@@ -693,6 +721,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             break;
         case "netflavns1":
             window_open_defuser(); // 打断 window.open 施法
+            css_adsRemove(imax.css.js_common, 50, 'common');
             break;
         case "netflavns2":
             window_open_defuser(); // 打断 window.open 施法
@@ -885,6 +914,10 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
 
             break;
 
+        case 'novel543':
+            css_adsRemove(imax.css.novel543, 100, 'novel543x');
+            break;
+
         default:
             // 修正 case 中 default 的匹配规则  10.25.203
             if (/\b(netflav|missav|jable)\b/i.test(window.location.href.toLowerCase())) {
@@ -1041,7 +1074,7 @@ function jable_adsRemove() { // Cookie 设定及注入
     const div = document.querySelectorAll("div.col-6.col-sm-4.col-lg-3, div.col-6.col-sm-4.col-xl-3, div.col-6.col-sm-4.col-lg-12")
     for (x = 0; x < div.length; x++) {
         if (div[x].querySelectorAll("script, a[href*=trackwilltrk]").length >= 1) {
-            div[x].style = "display: none !important;"
+            div[x].style = "display: none !important; pointer-events: none !important;"
         }
     }
 }
