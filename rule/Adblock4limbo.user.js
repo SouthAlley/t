@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Adblock4limbo.[github]
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.2024.10.24
+// @version      0.2024.10.30
 // @license      CC BY-NC-SA 4.0
-// @description  毒奶去网页广告计划用户脚本 For Quantumult X & Surge & Shadowrocket & Loon & Stash & 油猴 ；1.新增页面右下角导航；2.通过 JavaScript 移除特定网站网页广告 —— 搜索引擎（Bing/Google）广告及内容农场结果清除/低端影视/欧乐影院/哔滴影视/Pornhub/Javbus/Supjav/Jable/MissAv/91porn/hitomi/紳士漫畫/禁漫天堂/等视频&ACG&小说&漫画网站上的弹窗广告&视频广告&Gif图片广告等，保持网页清爽干净无打扰！ P.S. 欢迎提交issue  
+// @description  毒奶去网页广告计划用户脚本 For Quantumult X & Surge & Shadowrocket & Loon & Stash & 油猴 ；1.新增页面右下角导航；2.通过 JavaScript 移除特定网站网页广告 —— 搜索引擎（Bing/Google）广告及内容农场结果清除/低端影视/欧乐影院/iyf爱壹帆/哔滴影视/Pornhub/Javbus/Supjav/Jable/MissAv/91porn/hitomi/紳士漫畫/禁漫天堂/等视频&ACG&小说&漫画网站上的弹窗广告&视频广告&Gif图片广告等，保持网页清爽干净无打扰！ P.S. 欢迎提交issue
 // @author       limbopro
 
 /**
@@ -18,7 +18,7 @@
  * ---------------------------
  */
 
-/* 新增反馈&导航按钮
+/* 新增反馈&导航按钮（页面右下角）
 
 // 【导航】使用指南（PC/Mac）
 /// 按教程安装好油猴脚本
@@ -118,6 +118,7 @@
 // @include      https://m.nivod*.tv/*
 // @include      https://www.nivod*.tv/*
 // @match        https://www.javbus.com/*
+// @match        https://jav.land/*
 // @match        https://cn1.91short.com/*
 // @match        https://xiaobaotv.net/*
 // @match        https://xiaobaotv.com/*
@@ -275,7 +276,7 @@ var imax = {
         ddrk: "div#afc_sidebar_2842, div.cfa_popup, div[class*='popup'], #sajdhfbjwhe, #kasjbgih, #fkasjgf, img[src*='bcebos'] {opacity:0% !important; pointer-events: none !important;}",
         baidu_zhidao: "*,.ad-link:not(.adsbox), .ad-icon, .ec-ad, mdiv[class$='-ecom-ads'],div[class*='fc-'][tplid],.ec_ad_results, .ad-icon, .wpbyuwfarr-ecom-ads, div[class*=\"fc-\"][tplid], .w-question-list[data-sign], .ec-ad, {display:none !important;}",
         baidu_search: "div[style*=fixed],.ec_ad_results {display:none !important;} ", // baidu
-        baidu_index: "#foot, .recordcode, .index-copyright, div[style*='overflow'], article , .rn-container, .s-loading-frame.bottom {display:none !important;}",
+        baidu_index: "a[data-tclog] > img, #foot, .recordcode, .index-copyright, div[style*='overflow'], article , .rn-container, .s-loading-frame.bottom {display:none !important;}",
         ddrk2: "body,div.post-content,a {overflow-x:hidden !important;}", // ddys
         jable: "body {overflow-x:hidden;} div.site-content {overflow-x:hidden!important;} div.text-center > a[target=_blank], li[class*='nav-item'] >  a[target=_blank], div.asg-interstitial, div.asg-interstitial__mask, iframe, div[class*=\"exo\"], .exo-native-widget-outer-container, a[href*=\"trwl1\"], div[data-width=\"300\"], div.text-center.mb-e-30, div[data-width*=\"300\"], div[style*=\"300px\"], section[class*=\"justify\"], iframe[width=\"728\"][height=\"90\"], #site-content > div.container > section.pb-3.pb-e-lg-40.text-center, a[href*=\"\?banner=\"],[class*=\"root--\"],.badge,a[href=\"http\:\/\/uus52\.com/\"] {display :none !important; pointer-events: none !important;}", // Jable.tv
         test: "*, div,img {display: none !important}",
@@ -297,13 +298,14 @@ var imax = {
         nivod: "img[src*='1a732eeb1adb'], img[src*='49e8abd32d13'], span[style*='1a2d'],span[style*='0891'],[style='text-align: center; margin-top: 30px;'],.qy20-h-carousel__li:nth-child(-n+2), .qy20-h-carousel__li:nth-child(-1n+2), span[style*='d92ea585-0'],span[style*='3db8c0fd-218f-491f-b2b0-2057bd401a2d'], iframe, img[src*=gif], .video-ad, .nav-ads, #adDiv, .v-ad, .ad-text, #video-container + ul[style^=\"width:\"] > li > img {display: none !important; pointer-events:none important;}", // 泥巴影视视频左上角水印贴片 nivod
         _91short: "a[href*=lhiefl], a[href*=lol], div.shortcuts-mobile-overlay,div.xtbhkpvx_b,a[href*=cpa],img[src*=gif],#adsbox, div.adm {display:none !important; pointer-events: none !important;}",
         xiaobaotv: "",
-        iyf: ".dabf > .ng-star-inserted,vg-pause-f,.bg-overlayer:style(pointer-events: unset !important;),.pggf > .ng-star-inserted {display:none !important; pointer-events: none !important;}",
+        iyf: "vg-pause-f, div.ad, .ad, .ad_tag, .dabf > .ng-star-inserted, .pggf > .ng-star-inserted {display:none !important; pointer-events: none !important;}",
         hltv: "div.close-container,.presented-by,.mid-container + div[id]:has(> a[href] > img[alt][src]),.kgN8P9bvyb2EqDJR,.mid-container {display:none !important; pointer-events: none !important;}",
         cnys: "div#player_pause, e#time_ad, div.vod-gg, img[src*='b02.gif'], #adsbox, #ADtip, .ec-ad {display:none !important; pointer-events: none !important;}",
         google: "div.XDZKBc,.jnyxRd.TpRPV {display:none !important}",
         javday: "p[style], p > a {display:none !important; pointer-events: none !important;} ",
         xvideos: "#video-sponsor-links,.videoad-title,.remove-ads-link,.remove-ads,.exo-ad-ins-container,.adsbyexoclick,#video-ad,#ad-footer,.videoad-title {display:none !important; pointer-events: none !important;}", // xvideos
         javbus: ".ad-item,.ad-box {display:none !important}",
+        javland: "img[src*='.gif'], a[href^=\"https://go.rmhfrtnd.com/\"] {display:none !important; pointer-events: none !important;}",  // jav.land
         _4hu: "div.row.col2 > dl, #btmBox, img[src*=gif],.col5 > dl#randomBox, script[src$=\"/base.js\"] + #couplet, body[ontouchstart] > #topBox,.wrap + #btmBox,.search + #midBox {opacity:0% !important; pointer-events: none !important; height: 0px !important}",
         // {opacity:0% !important; pointer-events: none !important; height: 0px !important}
         netflav: "iframe[src*=xlv],.ads_video_overlay_mobile, div.widget-container, a[href*=\"register\"][target=\"_blank\"],div.ads_video_close_button,div.ads_video_overlay_mobile,div.footer_root,div.ads_head_banner_container {display:none !important;}",
@@ -366,6 +368,7 @@ function values() {
         "javday",
         "xvideos",
         "javbus",
+        "jav.land",
         "4hu",
         "netflav",
         "javplayer",
@@ -764,7 +767,92 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             // nothing to do.
             break;
         case 'iyf':
-            css_adsRemove(imax.css.iyf);
+
+            css_adsRemove(imax.css.iyf, 100, 'fuckiyf');
+            function iyf_css() {
+                setTimeout(() => {
+                    let iyf_css = "div.ad, .ad, .ad_tag, .dabf > .ng-star-inserted,vg-pause-f, .pggf > .ng-star-inserted"
+                    document.querySelectorAll(iyf_css).forEach((x) => {
+                        x.style = 'display:none;height:0px;'
+                    })
+                }, 1500)
+            }
+
+            //iyf_css();
+
+            aopr();
+
+            window.onload = function iyf_hd_switch() {
+
+                if (document.querySelectorAll('li[data-v-7f52b4c5').length !== 0) {
+                    document.querySelectorAll('span[data-v-7f52b4c5].leg.relative')[0].click()
+                }
+
+                setTimeout(() => {
+                    let hd = document.querySelectorAll('li[data-v-7f52b4c5')
+                    hd.forEach((x) => {
+                        console.log(x.className)
+                        if (x.className.search('vip|button') == -1) {
+                            if (x.className !== 'active') {
+                                x.click()
+                                console.log('点击...')
+                            }
+                            console.log('此前已点击...')
+                            if (document.querySelector('.van-overlay').style.display !== 'none'
+                            ) {
+                                document.querySelector('.van-overlay').click()
+                            }
+                        }
+                    })
+                }, 1500)
+            }
+
+            // .player-container .play_info
+            function index(x, id) {
+                if (document.querySelector(x) !== null) {
+
+                    if (document.querySelector('#' + id) == null) {
+                        let a = document.createElement('a')
+                        a.href = 'https://www.iyf.tv/'
+                        a.style = 'position:absolute;right:9px;top:0%;color:aqua;z-index:114154;'
+                        a.id = id
+                        a.textContent = '返回首页🏠'
+                        let parentElement = document.querySelector(x)
+                        parentElement.appendChild(a)
+                        console.log('生成首页按钮')
+                    }
+
+                    if (document.querySelector('#' + id)) {
+                        console.log('Got u!')
+                    } else {
+                        newx();
+                    }
+
+                }
+            }
+
+            function newx() {
+                setTimeout(() => {
+                    index('.play_info', 'iyf_index')
+                    //index('div.player-container', 'iyf_news')
+                }
+                    , 1500)
+            }
+
+            newx();
+
+            var currentUrl = window.location.href;
+            setInterval(function () {
+                if (window.location.href !== currentUrl) {
+                    console.log('URL发生变化');
+                    newx();
+                    currentUrl = window.location.href;
+
+                }
+            }, 2000);
+
+            videoAds_accelerateSkip(0.1); // 视频广告加速
+            setConstant(); // 视频广告加速
             break;
 
         case 'cnys':
@@ -838,6 +926,71 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             }
 
             javbus()
+
+            break;
+        case 'jav.land': // 444
+            css_adsRemove(imax.css.javland, 0, "javland");
+
+            function jav() {
+                if (document.querySelectorAll('td[width="80%"]')[1] !== null) {
+                    let code = document.querySelectorAll('td[width="80%"]')[1].textContent
+
+
+                    // 在番号详情页追加在线预览链接
+                    function tmd(parentsSelector, code, textContent) {
+
+                        function otherSearch() {
+                            // 试试其他搜索：
+
+                            let parentElement = document.querySelectorAll(parentsSelector)[0]
+
+                            let p1 = document.createElement('p')
+                            p1.id = 'p1'
+                            p1.style = 'margin:10px 0px 0px 0px; border-left:6px solid #38a3fd; font-size:14px; border-radius:  4px !important;box-shadow: rgb(151, 151, 151) 0px 0px 0px 0px inset; /*inset 0px 0px 15px 3px #979797;*/ background:#10141f; color:chocolate; padding:0px 0px 0px 0px;word-break:break-all;border-radius:0px 0px 0px 0px'
+
+                            let p2 = document.createElement('p')
+                            p2.style = 'padding-left:6px;font-weight:inherit; padding:6px; word-break:break-all;font-size:inherit;border-radius:0px'
+                            p2.id = 'p2'
+
+
+                            p1.appendChild(p2)
+                            parentElement.insertBefore(p1, parentElement.childNodes[2])
+
+                            let span = document.createElement('span')
+                            span.style = 'font-weight:bolder;font-size:medium;color:bisque;'
+                            span.textContent = textContent
+                            p2.appendChild(span)
+
+                            function aAdd2Parent(siteName, url, codeSlect) {
+                                let a = document.createElement('a')
+                                let lable = document.createElement('label')
+                                lable.style = 'font-weight:inherit;display:inline-block;max-width:100%;margin-right:10px;'
+                                a.href = url + codeSlect
+                                a.textContent = siteName
+                                a.target = '_blank'
+                                a.style = 'color:inherit;/*text-decoration:revert !important;*/ font-weight:inherit'
+                                lable.appendChild(a)
+                                p2.appendChild(lable)
+                            }
+
+                            aAdd2Parent('MissAV[720P]', 'https://missav.com/search', '/' + code)
+                            aAdd2Parent('Jable[HD]', 'https://jable.tv/search', '/' + code + '/')
+                            aAdd2Parent('Supjav[ultraHD]', 'https://supjav.com/?s=', code)
+                            aAdd2Parent('番号搜索[聚合]', 'https://limbopro.com/btsearch.html#gsc.tab=0&gsc.q=', code + "&gsc.sort=")
+                            aAdd2Parent('谷歌搜索🔍', 'https://www.google.com/search?q=', code)
+                            aAdd2Parent('Javbus📖', 'https://www.javbus.com/search/', code + '&type=&parent=ce')
+                            console.log('已生成在线预览链接🔗')
+                        }
+                        otherSearch()
+                    }
+
+                    setTimeout(() => {
+                        tmd('.col-md-6.col-sm-12.col-xs-12', code, '在线预览: ');
+                    }, 100)
+                }
+            }
+
+            jav();
 
             break;
         case "4hu":
@@ -2368,3 +2521,60 @@ function noWindowOpenIf(
         }
     });
 }
+
+
+/// abort-on-property-read.js
+/// alias aopr.js
+/// 当脚本尝试读取指定属性时中止脚本
+/// https://github.com/AdguardTeam/Scriptlets/blob/master/wiki/about-scriptlets.md#abort-on-property-read
+
+function aopr() {
+    const magic = String.fromCharCode(Date.now() % 26 + 97) +
+        Math.floor(Math.random() * 982451653 + 982451653).toString(36);
+    const abort = function () {
+        throw new ReferenceError(magic);
+    };
+    const makeProxy = function (owner, chain) {
+        const pos = chain.indexOf('.');
+        if (pos === -1) {
+            const desc = Object.getOwnPropertyDescriptor(owner, chain);
+            if (!desc || desc.get !== abort) {
+                Object.defineProperty(owner, chain, {
+                    get: abort,
+                    set: function () { }
+                });
+            }
+            return;
+        }
+        const prop = chain.slice(0, pos);
+        let v = owner[prop];
+        chain = chain.slice(pos + 1);
+        if (v) {
+            makeProxy(v, chain);
+            return;
+        }
+        const desc = Object.getOwnPropertyDescriptor(owner, prop);
+        if (desc && desc.set !== undefined) { return; }
+        Object.defineProperty(owner, prop, {
+            get: function () { return v; },
+            set: function (a) {
+                v = a;
+                if (a instanceof Object) {
+                    makeProxy(a, chain);
+                }
+            }
+        });
+    };
+    const owner = window;
+    let chain = '{{1}}';
+    makeProxy(owner, chain);
+    const oe = window.onerror;
+    window.onerror = function (msg, src, line, col, error) {
+        if (typeof msg === 'string' && msg.indexOf(magic) !== -1) {
+            return true;
+        }
+        if (oe instanceof Function) {
+            return oe(msg, src, line, col, error);
+        }
+    }.bind();
+};
